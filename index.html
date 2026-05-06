@@ -502,7 +502,7 @@ map.on('load', () => {
         'case',
         ['>', ['coalesce', ['feature-state', 'count'], 0], 0],
         ['interpolate', ['linear'], ['feature-state', 'count'],
-          0, 'rgba(0,0,0,0)', 1, C[0], 2, C[1], 3, C[2], 5, C[3], 8, C[4], 13, C[5], 20, C[6]
+          1, C[1], 2, C[2], 3, C[3], 5, C[4], 8, C[5], 13, C[6]
         ],
         'rgba(0,0,0,0)'
       ],
@@ -746,6 +746,18 @@ map.on('load', () => {
 
 // Apply density via setFeatureState — no size limit, works for all 3000+ counties
 function applyDensity(density) {
+  // Dynamically rescale color stops based on actual max count
+  const values = Object.values(density);
+  const maxCount = values.length > 0 ? Math.max(...values) : 1;
+  const s = (frac) => Math.max(1, Math.round(frac * maxCount));
+  map.setPaintProperty('county-fills', 'fill-color', [
+    'case',
+    ['>', ['coalesce', ['feature-state', 'count'], 0], 0],
+    ['interpolate', ['linear'], ['feature-state', 'count'],
+      1, C[1], s(0.2), C[2], s(0.4), C[3], s(0.6), C[4], s(0.8), C[5], maxCount, C[6]
+    ],
+    'rgba(0,0,0,0)'
+  ]);
   // Clear previous
   for (const fips of prevDensityKeys) {
     map.setFeatureState({source:'counties',sourceLayer:'original',id:parseInt(fips)},{count:0});
@@ -856,22 +868,7 @@ function updateAll() {
   document.getElementById('stat-counties').textContent = uniqueCounties.toLocaleString();
   document.getElementById('stat-states').textContent = uniqueStates;
 
-  if (mapReady) {
-    // Dynamically rescale color thresholds based on current max density
-    const maxCount = Math.max(1, ...Object.values(fullDensity));
-    const t = (frac) => Math.max(1, Math.round(frac * maxCount));
-    map.setPaintProperty('county-fills', 'fill-color', [
-      'case',
-      ['>', ['coalesce', ['feature-state', 'count'], 0], 0],
-      ['interpolate', ['linear'], ['feature-state', 'count'],
-        0, 'rgba(0,0,0,0)',
-        t(0.05), C[0], t(0.15), C[1], t(0.3), C[2],
-        t(0.5), C[3], t(0.7), C[4], t(0.85), C[5], maxCount, C[6]
-      ],
-      'rgba(0,0,0,0)'
-    ]);
-    applyDensity(fullDensity);
-  }
+  if (mapReady) applyDensity(fullDensity);
   renderOrgList();
   renderNationalList();
 }
@@ -967,7 +964,7 @@ if (window.innerWidth <= 768) {
 
 Promise.all([
   fetch(ORGS_JSON_PATH).then(r => r.json()),
-  fetch(NETWORKS_JSON_PATH).then(r => r.json())
+  fetch(NETWORKS_JSON_PATH).then(r => r.json()).catch(() => [])
 ]).then(([orgs, networks]) => {
   allOrgs = orgs;
   allNetworks = networks;
