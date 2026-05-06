@@ -1,0 +1,846 @@
+[
+  {
+    "id": 1,
+    "name": "All Skagit Thriving",
+    "website": "https://northsoundach.org/all-skagit-thriving",
+    "scale": "local",
+    "fips": [
+      53057
+    ],
+    "states": [],
+    "lng": -122.33,
+    "lat": 48.48
+  },
+  {
+    "id": 2,
+    "name": "Atlanta Regional Collaborative for Health Improvement",
+    "website": "https://www.archicollaborative.org/",
+    "scale": "local",
+    "fips": [
+      13121,
+      13089,
+      13063,
+      13067,
+      13135
+    ],
+    "states": [],
+    "lng": -84.312,
+    "lat": 33.726
+  },
+  {
+    "id": 3,
+    "name": "Belonging Colorado",
+    "website": "https://belongingcolorado.com/",
+    "scale": "local",
+    "fips": [],
+    "states": [
+      "CO"
+    ],
+    "lng": -105.55,
+    "lat": 39.0
+  },
+  {
+    "id": 4,
+    "name": "BeWell Palm Beach County",
+    "website": "https://www.bewellpbc.org/",
+    "scale": "local",
+    "fips": [
+      12099
+    ],
+    "states": [],
+    "lng": -80.1,
+    "lat": 26.65
+  },
+  {
+    "id": 5,
+    "name": "California Accountable Communities for Health Initiative",
+    "website": "https://www.cachi.org/",
+    "scale": "local",
+    "fips": [],
+    "states": [
+      "CA"
+    ],
+    "lng": -119.68,
+    "lat": 37.27
+  },
+  {
+    "id": 6,
+    "name": "Civic Commons",
+    "website": "https://www.civic-commons.org/",
+    "scale": "local",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 7,
+    "name": "Create a Healthier Niagara Falls Collaborative",
+    "website": "https://www.healthierniagarafalls.org/",
+    "scale": "local",
+    "fips": [
+      36063
+    ],
+    "states": [],
+    "lng": -79.05,
+    "lat": 43.1
+  },
+  {
+    "id": 8,
+    "name": "Contra Costa Together",
+    "website": "https://contracostatogether.org/",
+    "scale": "local",
+    "fips": [
+      6013
+    ],
+    "states": [],
+    "lng": -122.05,
+    "lat": 37.85
+  },
+  {
+    "id": 9,
+    "name": "Georgia Thrives Together",
+    "website": "https://gathrivestogether.org/",
+    "scale": "local",
+    "fips": [],
+    "states": [
+      "GA"
+    ],
+    "lng": -83.44,
+    "lat": 32.68
+  },
+  {
+    "id": 10,
+    "name": "Healthy Communities Delaware",
+    "website": "https://www.healthycommunitiesde.org/",
+    "scale": "local",
+    "fips": [],
+    "states": [
+      "DE"
+    ],
+    "lng": -75.52,
+    "lat": 38.99
+  },
+  {
+    "id": 11,
+    "name": "Imagine Fox Cities",
+    "website": "https://imaginefoxcities.com/",
+    "scale": "local",
+    "fips": [
+      55139,
+      55087,
+      55015
+    ],
+    "states": [],
+    "lng": -88.4333,
+    "lat": 44.3367
+  },
+  {
+    "id": 12,
+    "name": "Inland Empire Vital Conditions Network",
+    "website": "https://ievitalconditionsnetwork.org/",
+    "scale": "local",
+    "fips": [
+      6065,
+      6071
+    ],
+    "states": [],
+    "lng": -116.19,
+    "lat": 34.29
+  },
+  {
+    "id": 13,
+    "name": "Jefferson Collaborative for Health Equity",
+    "website": "https://www.jeffersonhealth.org/about-us/community/collaborative-health-equity",
+    "scale": "local",
+    "fips": [
+      42101
+    ],
+    "states": [],
+    "lng": -75.13,
+    "lat": 40.0
+  },
+  {
+    "id": 14,
+    "name": "Michigan Health Improvement Alliance",
+    "website": "https://mihia.org/our-story/",
+    "scale": "local",
+    "fips": [
+      26017,
+      26145,
+      26051,
+      26151,
+      26057,
+      26143,
+      26157,
+      26063,
+      26129,
+      26035,
+      26069,
+      26073,
+      26011,
+      26111
+    ],
+    "states": [],
+    "lng": -84.8324,
+    "lat": 44.0028
+  },
+  {
+    "id": 15,
+    "name": "North Sound Accountable Community for Health",
+    "website": "https://northsoundach.org/",
+    "scale": "local",
+    "fips": [
+      53057,
+      53061,
+      53029,
+      53073,
+      53055
+    ],
+    "states": [],
+    "lng": -122.2282,
+    "lat": 48.1975
+  },
+  {
+    "id": 16,
+    "name": "Northwest Regional Primary Care Association",
+    "website": "https://www.nwrpca.org/",
+    "scale": "local",
+    "fips": [],
+    "states": [
+      "AL",
+      "ID",
+      "OR",
+      "WA"
+    ],
+    "lng": -86.79,
+    "lat": 32.8
+  },
+  {
+    "id": 17,
+    "name": "Promise Neighborhoods",
+    "website": "https://promiseneighborhoods.ed.gov/",
+    "scale": "local",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 18,
+    "name": "Regenerating Sonora",
+    "website": "https://regeneratingsonora.org/",
+    "scale": "local",
+    "fips": [
+      4021
+    ],
+    "states": [],
+    "lng": -111.37,
+    "lat": 32.89
+  },
+  {
+    "id": 19,
+    "name": "Thriving Together Forsyth",
+    "website": "https://thrivingtogetherforsyth.org/",
+    "scale": "local",
+    "fips": [
+      37067
+    ],
+    "states": [],
+    "lng": -80.25,
+    "lat": 36.1
+  },
+  {
+    "id": 20,
+    "name": "Thriving Together North Central Washington",
+    "website": "https://www.thrivingtogether.org/",
+    "scale": "local",
+    "fips": [
+      53017,
+      53047,
+      53025,
+      53007
+    ],
+    "states": [],
+    "lng": -119.885,
+    "lat": 47.695
+  },
+  {
+    "id": 21,
+    "name": "Together We Thrive (Greater Cincinnati)",
+    "website": "https://watchusthrive.org/",
+    "scale": "local",
+    "fips": [
+      39061
+    ],
+    "states": [],
+    "lng": -84.54,
+    "lat": 39.1
+  },
+  {
+    "id": 22,
+    "name": "Trenton Health Team",
+    "website": "https://trentonhealthteam.org/",
+    "scale": "local",
+    "fips": [
+      34021
+    ],
+    "states": [],
+    "lng": -74.66,
+    "lat": 40.28
+  },
+  {
+    "id": 23,
+    "name": "Washington Alliance for Economic Justice",
+    "website": "https://waeconomicjusticealliance.com/",
+    "scale": "local",
+    "fips": [],
+    "states": [
+      "WA"
+    ],
+    "lng": -120.74,
+    "lat": 47.4
+  },
+  {
+    "id": 24,
+    "name": "Wild, Wonderful & Healthy West Virginia",
+    "website": "https://wvruralhealth.org/programs/wwhwv/",
+    "scale": "local",
+    "fips": [],
+    "states": [
+      "VA"
+    ],
+    "lng": -78.45,
+    "lat": 37.43
+  },
+  {
+    "id": 25,
+    "name": "All-America Cities",
+    "website": "https://www.nationalcivicleague.org/america-city-award/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 26,
+    "name": "Aspen Community Solutions",
+    "website": "https://www.aspencommunitysolutions.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 27,
+    "name": "Better Ancestors",
+    "website": "https://betterancestor.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 28,
+    "name": "Better Together America",
+    "website": "https://www.bettertogetheramerica.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 29,
+    "name": "Blue Zones",
+    "website": "https://www.bluezones.com/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 30,
+    "name": "Braver Angels",
+    "website": "https://braverangels.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 31,
+    "name": "Build Healthy Places Network",
+    "website": "https://buildhealthyplaces.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 32,
+    "name": "Center for Community Resilience",
+    "website": "https://ccr.publichealth.gwu.edu/tools-resources/the-BCR-approach",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 33,
+    "name": "Civic Health Project",
+    "website": "https://www.civichealthproject.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 34,
+    "name": "Civity",
+    "website": "https://www.civity.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 35,
+    "name": "CF Leads",
+    "website": "https://cfleads.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 36,
+    "name": "Collective Impact Forum",
+    "website": "https://collectiveimpactforum.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 37,
+    "name": "Common Future",
+    "website": "https://www.commonfuture.co/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 38,
+    "name": "Community Heart and Soul",
+    "website": "https://www.communityheartandsoul.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 39,
+    "name": "Community Initiatives Network",
+    "website": "https://www.communityinitiatives.com/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 40,
+    "name": "Connective Tissue",
+    "website": "https://theconnectivetissue.us/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 41,
+    "name": "Democracy Collaborative",
+    "website": "https://democracycollaborative.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 42,
+    "name": "Democracy Funders Network",
+    "website": "https://www.democracyfundersnetwork.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 43,
+    "name": "Foundation for Social Connection",
+    "website": "https://foundationsc.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 44,
+    "name": "Funders Forum on Accountable Health",
+    "website": "https://accountablehealth.gwu.edu/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 45,
+    "name": "Governance Futures Network",
+    "website": "https://governancefutures.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 46,
+    "name": "Grand Bargain Project",
+    "website": "https://www.grandbargainproject.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 47,
+    "name": "Healthy Places by Design",
+    "website": "https://healthyplacesbydesign.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 48,
+    "name": "Hold.Health",
+    "website": "https://hold.health/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 49,
+    "name": "Inter-Movement Impact Project",
+    "website": "https://www.mediatorsfoundation.org/current-projects/inter-movement-impact-project",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 50,
+    "name": "Interfaith America",
+    "website": "https://interfaithamerica.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 51,
+    "name": "Interstituium",
+    "website": "https://interstituium.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 52,
+    "name": "Investing in Flourishing",
+    "website": "https://investinginflourishing.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 53,
+    "name": "Federal Reserve Bank, Missing Markets Initiative",
+    "website": "https://www.fedcommunities.org/initiative/missing-markets/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 54,
+    "name": "Listen First Coalition",
+    "website": "https://www.listenfirstproject.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 55,
+    "name": "Made by Us",
+    "website": "https://historymadebyus.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 56,
+    "name": "National Association of Community Health Centers",
+    "website": "https://www.nachc.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 57,
+    "name": "National Coalition for Dialogue and Deliberation",
+    "website": "https://ncdd.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 58,
+    "name": "National Forum for Heart Disease and Stroke Prevention",
+    "website": "https://www.nationalforum.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 59,
+    "name": "New Pluralists",
+    "website": "https://www.newpluralists.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 60,
+    "name": "Othering & Belonging Institute",
+    "website": "https://belonging.berkeley.edu/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 61,
+    "name": "Philanthropy for Active Civic Engagement",
+    "website": "https://www.pacefunders.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 62,
+    "name": "PolicyLink, Governing for All, We are the Founders",
+    "website": "https://www.policylink.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 63,
+    "name": "Presencing Institute",
+    "website": "https://www.presencing.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 64,
+    "name": "Prosperity Now",
+    "website": "https://prosperitynow.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 65,
+    "name": "Purpose Built Communities",
+    "website": "https://purposebuiltcommunities.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 66,
+    "name": "Reimagining the Civic Commons",
+    "website": "https://civiccommons.us/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 67,
+    "name": "Revolutionary Love",
+    "website": "https://revolutionarylove.net/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 68,
+    "name": "Stand Together",
+    "website": "https://standtogether.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 69,
+    "name": "StriveTogether",
+    "website": "https://www.strivetogether.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 70,
+    "name": "Thriving Together US",
+    "website": "https://thrivingtogetherus.substack.com/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 71,
+    "name": "Trust for Civic Life",
+    "website": "https://trustforciviclife.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 72,
+    "name": "Undivided",
+    "website": "https://undivided.us/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 73,
+    "name": "WIN Network, WE in the World",
+    "website": "https://weintheworld.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 74,
+    "name": "Weave Social Fabric",
+    "website": "https://weave.aspeninstitute.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 75,
+    "name": "Wellbeing Economy Alliance",
+    "website": "https://wellbeingeconomy.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 76,
+    "name": "Y USA",
+    "website": "https://www.ymca.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 77,
+    "name": "Youth 250",
+    "website": "https://youth250.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  }
+]
