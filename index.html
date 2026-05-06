@@ -420,6 +420,7 @@
 const MAPBOX_TOKEN = 'pk.eyJ1IjoiYW5uYWNvcm4iLCJhIjoiY21oZzR0d2N1MGJrZzJrczd3YzQ5dTd2eCJ9.jy4VcpJX5fWUqTo-Pr6oZA';
 const ORGS_JSON_PATH = 'orgs.json';
 const NETWORKS_JSON_PATH = 'networks.json';
+const TRIBAL_JSON_PATH = 'tribal.geojson';
 
 const STATE_FIPS = {AK:2,AL:1,AR:5,AZ:4,CA:6,CO:8,CT:9,DE:10,FL:12,GA:13,HI:15,IA:19,ID:16,IL:17,IN:18,KS:20,KY:21,LA:22,MA:25,MD:24,ME:23,MI:26,MN:27,MO:29,MS:28,MT:30,NC:37,ND:38,NE:31,NH:33,NJ:34,NM:35,NV:32,NY:36,OH:39,OK:40,OR:41,PA:42,RI:44,SC:45,SD:46,TN:47,TX:48,UT:49,VA:51,VT:50,WA:53,WI:55,WV:54,WY:56,DC:11};
 
@@ -508,7 +509,35 @@ map.on('load', () => {
       ],
       'fill-opacity': 0.85
     }
+
+
+  // ── TRIBAL NATION BOUNDARIES ──
+  map.addSource('tribal', {
+    type: 'geojson',
+    data: TRIBAL_JSON_PATH,
+    generateId: true
+  });
+
+  map.addLayer({
+    id: 'tribal-fills',
+    type: 'fill',
+    source: 'tribal',
+    paint: {
+      'fill-color': 'rgba(0,0,0,0)',
+      'fill-opacity': 0.75
+    }
   }, 'waterway-label');
+
+  map.addLayer({
+    id: 'tribal-borders',
+    type: 'line',
+    source: 'tribal',
+    paint: {
+      'line-color': '#f59e0b',
+      'line-width': 1.2,
+      'line-opacity': 0
+    }
+  });
 
   map.addLayer({
     id: 'county-highlight',
@@ -769,6 +798,32 @@ function applyDensity(density) {
   prevDensityKeys = Object.keys(density);
 }
 
+function applyTribalDensity(orgs) {
+  // Build a set of tribal nation names that have active orgs
+  const activeTribes = new Set();
+  for (const org of orgs) {
+    if (org.tribalNations) {
+      for (const t of org.tribalNations) activeTribes.add(t.toLowerCase().trim());
+    }
+  }
+  if (activeTribes.size === 0) return;
+
+  // Color tribal fills using amber/gold to distinguish from county purple
+  const tribalColor = [
+    'case',
+    ['in', ['downcase', ['get', 'NAME']], ['literal', [...activeTribes]]],
+    '#f59e0b',
+    'rgba(0,0,0,0)'
+  ];
+  map.setPaintProperty('tribal-fills', 'fill-color', tribalColor);
+  map.setPaintProperty('tribal-borders', 'line-opacity', [
+    'case',
+    ['in', ['downcase', ['get', 'NAME']], ['literal', [...activeTribes]]],
+    0.9,
+    0
+  ]);
+}
+
 let highlightedFips = [];
 function clearHighlight() {
   for (const f of highlightedFips) {
@@ -868,7 +923,10 @@ function updateAll() {
   document.getElementById('stat-counties').textContent = uniqueCounties.toLocaleString();
   document.getElementById('stat-states').textContent = uniqueStates;
 
-  if (mapReady) applyDensity(fullDensity);
+  if (mapReady) {
+    applyDensity(fullDensity);
+    applyTribalDensity(filtered);
+  }
   renderOrgList();
   renderNationalList();
 }
