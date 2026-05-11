@@ -18,7 +18,7 @@ af = addfips.AddFIPS()
 
 AIRTABLE_API_KEY = os.environ.get('AIRTABLE_API_KEY')
 BASE_ID = 'app0PiJ1y0rvCPBXL'
-TABLE_NAME = 'County Me In Organizations Form'
+TABLE_NAME = 'Count Me In Organizations Form'
 
 SCOPE_MAP = {
     'Local / County / Tribal 1+': 'local',
