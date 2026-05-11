@@ -1,65 +1,63 @@
 [
   {
-    "id": 1160,
-    "name": "Palm Health Foundation",
-    "website": "www.palmhealthfoundation.org",
+    "id": 0,
+    "name": "Leonard Parker Pool Institute for Health",
+    "website": "lppih.org",
     "scope": "local",
-    "city": "West Palm Beach",
-    "hqState": "FL",
+    "city": "Allentown",
+    "hqState": "PA",
     "mission": "",
     "fips": [
-      12099
+      42077,
+      42095
     ],
     "states": [],
     "networks": [
-      "BeWell Palm Beach County",
-      "Palm Beach County Culture of Health Network"
+      "Jefferson Collaborative for Health Equity"
     ]
   },
   {
-    "id": 1161,
-    "name": "Institute for People, Place, and Possibility (IP3)",
-    "website": "https://www.i-p3.org/",
-    "scope": "national",
-    "city": "Columbia",
-    "hqState": "MO",
+    "id": 1,
+    "name": "The Civic Canopy",
+    "website": "www.civiccanopy.org",
+    "scope": "statewide",
+    "city": "Denver",
+    "hqState": "CO",
     "mission": "",
     "fips": [],
-    "states": [],
+    "states": [
+      "CO"
+    ],
     "networks": [
-      "Contra Costa Together",
-      "Inland Empire Vital Conditions Network",
-      "North Sound Accountable Community for Health",
-      "Northwest Regional Primary Care Association",
-      "Wild, Wonderful & Healthy West Virginia",
-      "Healthy Communities Delaware",
-      "Thriving Together North Central Washington",
-      "Community Initiatives Network",
-      "Foundation for Social Connection",
-      "Hold.Health",
-      "Thriving Together US",
-      "WIN Network, WE in the World"
+      "Belonging Colorado",
+      "Better Together America",
+      "Civic Health Project",
+      "Collective Impact Forum",
+      "Braver Angels",
+      "National Coalition for Dialogue and Deliberation",
+      "Listen First Coalition",
+      "New Pluralists",
+      "Presencing Institute",
+      "Trust for Civic Life",
+      "Civic Collaboratory"
     ]
   },
   {
-    "id": 1162,
-    "name": "Georgia Health Policy Center",
-    "website": "ghpc.gsu.edu",
-    "scope": "national",
-    "city": "Atlanta",
-    "hqState": "GA",
+    "id": 2,
+    "name": "Washington Economic Justice Alliance",
+    "website": "www.waeconomicjusticealliance.com",
+    "scope": "statewide",
+    "city": "",
+    "hqState": "WA",
     "mission": "",
     "fips": [],
-    "states": [],
-    "networks": [
-      "Atlanta Regional Collaborative for Health Improvement",
-      "Federal Reserve Bank, Missing Markets Initiative",
-      "WIN Network, WE in the World",
-      "Investing in Flourishing"
-    ]
+    "states": [
+      "WA"
+    ],
+    "networks": []
   },
   {
-    "id": 1164,
+    "id": 4,
     "name": "Fox Valley Data Exchange",
     "website": "www.fvdex.org",
     "scope": "local",
@@ -88,72 +86,63 @@
     ]
   },
   {
-    "id": 1165,
-    "name": "The Civic Canopy",
-    "website": "www.civiccanopy.org",
-    "scope": "statewide",
-    "city": "Denver",
-    "hqState": "CO",
-    "mission": "",
-    "fips": [],
-    "states": [
-      "CO"
-    ],
-    "networks": [
-      "Belonging Colorado",
-      "Better Together America",
-      "Civic Health Project",
-      "Collective Impact Forum",
-      "Braver Angels",
-      "National Coalition for Dialogue and Deliberation",
-      "Listen First Coalition",
-      "New Pluralists",
-      "Presencing Institute",
-      "Trust for Civic Life",
-      "Civic Collaboratory"
-    ]
-  },
-  {
-    "id": 1166,
-    "name": "Leading Public Health",
-    "website": "LeadingPublicHealth.com",
-    "scope": "national",
-    "city": "Decatur",
-    "hqState": "GA",
-    "mission": "",
-    "fips": [],
-    "states": [],
-    "networks": []
-  },
-  {
-    "id": 1167,
-    "name": "Metroparks Toledo",
-    "website": "Metroparks Toledo.com",
-    "scope": "local",
-    "city": "Toledo",
-    "hqState": "OH",
-    "mission": "",
-    "fips": [],
-    "states": [],
-    "networks": []
-  },
-  {
-    "id": 1168,
-    "name": "Mercy Care",
-    "website": "Www.mercyatlanta.org",
+    "id": 5,
+    "name": "Midtown Assistance Center",
+    "website": "http://www.midtownassistancecenter.org",
     "scope": "local",
     "city": "Atlanta",
     "hqState": "GA",
     "mission": "",
     "fips": [
-      13089,
       13121
     ],
     "states": [],
     "networks": []
   },
   {
-    "id": 1169,
+    "id": 6,
+    "name": "Institute for People, Place, and Possibility (IP3)",
+    "website": "https://www.i-p3.org/",
+    "scope": "national",
+    "city": "Columbia",
+    "hqState": "MO",
+    "mission": "",
+    "fips": [],
+    "states": [],
+    "networks": [
+      "Contra Costa Together",
+      "Inland Empire Vital Conditions Network",
+      "North Sound Accountable Community for Health",
+      "Northwest Regional Primary Care Association",
+      "Wild, Wonderful & Healthy West Virginia",
+      "Healthy Communities Delaware",
+      "Thriving Together North Central Washington",
+      "Community Initiatives Network",
+      "Foundation for Social Connection",
+      "Hold.Health",
+      "Thriving Together US",
+      "WIN Network, WE in the World"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Georgia Health Policy Center",
+    "website": "ghpc.gsu.edu",
+    "scope": "national",
+    "city": "Atlanta",
+    "hqState": "GA",
+    "mission": "",
+    "fips": [],
+    "states": [],
+    "networks": [
+      "Atlanta Regional Collaborative for Health Improvement",
+      "Federal Reserve Bank, Missing Markets Initiative",
+      "WIN Network, WE in the World",
+      "Investing in Flourishing"
+    ]
+  },
+  {
+    "id": 8,
     "name": "Grady Health Sustem",
     "website": "Greadyhealth.org",
     "scope": "local",
@@ -168,34 +157,59 @@
     ]
   },
   {
-    "id": 1170,
-    "name": "Midtown Assistance Center",
-    "website": "http://www.midtownassistancecenter.org",
+    "id": 9,
+    "name": "Palm Health Foundation",
+    "website": "www.palmhealthfoundation.org",
+    "scope": "local",
+    "city": "West Palm Beach",
+    "hqState": "FL",
+    "mission": "",
+    "fips": [
+      12099
+    ],
+    "states": [],
+    "networks": [
+      "BeWell Palm Beach County",
+      "Palm Beach County Culture of Health Network"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Metroparks Toledo",
+    "website": "Metroparks Toledo.com",
+    "scope": "local",
+    "city": "Toledo",
+    "hqState": "OH",
+    "mission": "",
+    "fips": [],
+    "states": [],
+    "networks": []
+  },
+  {
+    "id": 11,
+    "name": "Leading Public Health",
+    "website": "LeadingPublicHealth.com",
+    "scope": "national",
+    "city": "Decatur",
+    "hqState": "GA",
+    "mission": "",
+    "fips": [],
+    "states": [],
+    "networks": []
+  },
+  {
+    "id": 12,
+    "name": "Mercy Care",
+    "website": "Www.mercyatlanta.org",
     "scope": "local",
     "city": "Atlanta",
     "hqState": "GA",
     "mission": "",
     "fips": [
+      13089,
       13121
     ],
     "states": [],
     "networks": []
-  },
-  {
-    "id": 1171,
-    "name": "Leonard Parker Pool Institute for Health",
-    "website": "lppih.org",
-    "scope": "local",
-    "city": "Allentown",
-    "hqState": "PA",
-    "mission": "",
-    "fips": [
-      42077,
-      42095
-    ],
-    "states": [],
-    "networks": [
-      "Jefferson Collaborative for Health Equity"
-    ]
   }
 ]
