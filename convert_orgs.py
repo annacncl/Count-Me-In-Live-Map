@@ -4,7 +4,7 @@ Convert Count-Me-In CSV form export to orgs.json for the map.
 Usage: python3 convert_orgs.py input.csv output.json
 """
 
-import csv, sys, json, us, addfips
+import csv, sys, json, io, us, addfips
 
 af = addfips.AddFIPS()
 
@@ -16,7 +16,6 @@ SCOPE_MAP = {
 
 # Maps form tribal nation names -> Census TIGER GeoJSON NAME field
 TRIBAL_NAME_MAP = {
-    # Wisconsin
     'Oneida Nation': 'Oneida (WI)',
     'Menominee Indian Tribe': 'Menominee',
     'Ho-Chunk Nation': 'Ho-Chunk Nation',
@@ -27,7 +26,6 @@ TRIBAL_NAME_MAP = {
     'Sokaogon Chippewa': 'Sokaogon Chippewa',
     'Stockbridge-Munsee': 'Stockbridge Munsee',
     'Forest County Potawatomi': 'Forest County Potawatomi',
-    # Minnesota
     'Red Lake Nation': 'Red Lake',
     'Leech Lake Band': 'Leech Lake',
     'White Earth Nation': 'White Earth',
@@ -36,6 +34,19 @@ TRIBAL_NAME_MAP = {
     'Grand Portage Band': 'Grand Portage',
     'Bois Forte Band': 'Bois Forte',
 }
+
+NETWORK_COLS = [
+    'Do you have ties to any local networks or initiatives? Select all that apply',
+    'Do you have ties to any nationwide networks or initiatives? Select all that apply',
+    'Other Relevant Networks or Initiatives',
+]
+
+def parse_network_field(val):
+    """Parse a comma-separated network field, handling quoted values with commas."""
+    if not val.strip():
+        return []
+    reader = csv.reader(io.StringIO(val))
+    return [n.strip() for n in next(reader) if n.strip()]
 
 def normalize_tribal_name(form_name):
     return TRIBAL_NAME_MAP.get(form_name.strip(), form_name.strip())
@@ -56,6 +67,7 @@ def convert(input_csv, output_json):
         scope_raw = row.get('Where does your organization primarily work?', '').strip()
         scope = SCOPE_MAP.get(scope_raw, 'local')
 
+        # County FIPS
         fips_list = []
         for col, val in row.items():
             if ('Counties' in col or 'County' in col) and val.strip():
@@ -70,6 +82,7 @@ def convert(input_csv, output_json):
                     else:
                         errors.append(f"  Could not find FIPS: {county}, {state.abbr} (org: {name})")
 
+        # Tribal nations
         tribal_data = []
         for col, val in row.items():
             if 'Tribal' in col and val.strip():
@@ -79,6 +92,14 @@ def convert(input_csv, output_json):
                     if census_name not in TRIBAL_NAME_MAP.values():
                         tribal_warnings.append(f"  '{nation}' not in TRIBAL_NAME_MAP (org: {name})")
 
+        # Networks selected by this org
+        networks = []
+        for col in NETWORK_COLS:
+            val = row.get(col, '').strip()
+            if val:
+                networks.extend(parse_network_field(val))
+
+        # States for statewide orgs
         states_list = []
         if scope == 'statewide':
             state_val = row.get('What state(s)? Local', '').strip()
@@ -95,6 +116,7 @@ def convert(input_csv, output_json):
             'mission': '',
             'fips': fips_list,
             'states': states_list,
+            'networks': networks,
         }
         if tribal_data:
             org['tribalNations'] = tribal_data

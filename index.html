@@ -772,6 +772,42 @@ map.on('load', () => {
     clearOrgDetail();
     renderOrgList();
   });
+
+  // ── TRIBAL CLICK HANDLER ──
+  map.on('click', 'tribal-fills', (e) => {
+    if (!e.features.length) return;
+    const tribalName = e.features[0].properties.NAME;
+    if (!tribalName) return;
+    // Find orgs that reference this tribal nation
+    const matchingOrgs = allOrgs.filter(o =>
+      o.tribalNations && o.tribalNations.some(t =>
+        t.toLowerCase() === tribalName.toLowerCase()
+      )
+    );
+    if (matchingOrgs.length === 0) return;
+    // Show tooltip with tribal name and orgs
+    const tooltip = document.getElementById('tooltip');
+    const nameEl = document.getElementById('tt-name');
+    const countEl = document.getElementById('tt-count');
+    const orgsEl = document.getElementById('tt-orgs');
+    if (nameEl) nameEl.textContent = tribalName + ' (Tribal Nation)';
+    if (countEl) countEl.textContent = matchingOrgs.length;
+    if (orgsEl) orgsEl.textContent = matchingOrgs.map(o => o.name).join(', ');
+    tooltip.classList.add('visible');
+  });
+
+  map.on('mousemove', 'tribal-fills', (e) => {
+    if (!e.features.length) return;
+    const name = e.features[0].properties.NAME;
+    const isActive = allOrgs.some(o =>
+      o.tribalNations && o.tribalNations.some(t => t.toLowerCase() === name.toLowerCase())
+    );
+    if (isActive) map.getCanvas().style.cursor = 'pointer';
+  });
+
+  map.on('mouseleave', 'tribal-fills', () => {
+    map.getCanvas().style.cursor = '';
+  });
 });
 
 // Apply density via setFeatureState — no size limit, works for all 3000+ counties
@@ -840,8 +876,21 @@ function setHighlight(fipsList) {
   highlightedFips = fipsList.map(String);
 }
 
+function getSelectedNetworkNames() {
+  const names = new Set();
+  for (const org of allOrgs) {
+    if (org.networks) {
+      for (const n of org.networks) names.add(n.trim());
+    }
+  }
+  return names;
+}
+
 function updateNetworkPins() {
-  const visibleNetworks = allNetworks.filter(n => n.scale !== 'nationwide' && n.lat && n.lng);
+  const selectedNames = getSelectedNetworkNames();
+  const visibleNetworks = allNetworks.filter(n =>
+    n.scale !== 'nationwide' && n.lat && n.lng && selectedNames.has(n.name)
+  );
 
   // Apply small offset to networks that share the same state centroid
   const coordCount = {};
@@ -878,7 +927,10 @@ function updateNetworkPins() {
 
 function renderNetworkList() {
   const listEl = document.getElementById('network-list');
-  const localNets = allNetworks.filter(n => n.scale === 'local' || n.scale === 'statewide');
+  const selectedNames = getSelectedNetworkNames();
+  const localNets = allNetworks.filter(n =>
+    (n.scale === 'local' || n.scale === 'statewide') && selectedNames.has(n.name)
+  );
   listEl.innerHTML = localNets.map(n => {
     const tag = n.scale === 'statewide'
       ? '<span class="network-scope-tag statewide">Statewide</span>'
@@ -983,7 +1035,8 @@ function clearOrgDetail() {
 
 function renderNationalList() {
   const nats = allOrgs.filter(o => o.scope === 'national');
-  const nationwideNets = showNetworks ? allNetworks.filter(n => n.scale === 'nationwide') : [];
+  const selectedNames = getSelectedNetworkNames();
+  const nationwideNets = showNetworks ? allNetworks.filter(n => n.scale === 'nationwide' && selectedNames.has(n.name)) : [];
   const total = nats.length + nationwideNets.length;
   document.getElementById('national-count').textContent = total;
 
@@ -1023,7 +1076,7 @@ if (window.innerWidth <= 768) {
 
 Promise.all([
   fetch(ORGS_JSON_PATH).then(r => r.json()),
-  fetch(NETWORKS_JSON_PATH).then(r => r.json()).catch(() => [])
+  fetch(NETWORKS_JSON_PATH).then(r => r.json()).catch(() => []).catch(() => [])
 ]).then(([orgs, networks]) => {
   allOrgs = orgs;
   allNetworks = networks;
