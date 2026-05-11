@@ -5,7 +5,9 @@ on:
     # Runs every Monday at 6am UTC (2am ET / 11pm PT Sunday)
     - cron: '0 6 * * 1'
   workflow_dispatch:
-    # Also allows manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write
 
 jobs:
   update-orgs:
