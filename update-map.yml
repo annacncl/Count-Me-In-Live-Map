@@ -1,0 +1,41 @@
+name: Weekly Map Update
+
+on:
+  schedule:
+    # Runs every Monday at 6am UTC (2am ET / 11pm PT Sunday)
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    # Also allows manual trigger from GitHub Actions tab
+
+jobs:
+  update-orgs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install us addfips
+
+      - name: Fetch orgs from Airtable and convert
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+        run: python3 fetch_orgs.py --output orgs.json
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add orgs.json
+          if git diff --staged --quiet; then
+            echo "No changes to orgs.json — skipping commit"
+          else
+            git commit -m "Auto-update: orgs.json from Airtable $(date -u '+%Y-%m-%d')"
+            git push
+          fi
