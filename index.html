@@ -1024,6 +1024,7 @@ function updateAll() {
   }
   renderOrgList();
   renderNationalList();
+  if (showNetworks) renderNetworkList();
 }
 
 function renderOrgList() {
@@ -1118,7 +1119,7 @@ if (window.innerWidth <= 768) {
 
 Promise.all([
   fetch(ORGS_JSON_PATH).then(r => r.json()),
-  fetch(NETWORKS_JSON_PATH).then(r => r.json()).catch(() => []).catch(() => [])
+  fetch(NETWORKS_JSON_PATH).then(r => r.json()).catch(() => [])
 ]).then(([orgs, networks]) => {
   allOrgs = orgs;
   allNetworks = networks;
