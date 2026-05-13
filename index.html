@@ -515,6 +515,10 @@ map.on('load', () => {
 
 
   // ── TRIBAL NATION BOUNDARIES ──
+  // Load and cache tribal GeoJSON for name matching
+  fetch(TRIBAL_JSON_PATH).then(r => r.json()).then(gj => {
+    window._tribalGeoJSON = gj;
+  });
   map.addSource('tribal', {
     type: 'geojson',
     data: TRIBAL_JSON_PATH,
@@ -891,11 +895,10 @@ function applyTribalDensity(orgs) {
   if (activeTribes.size === 0) return;
 
   // Color tribal fills using amber/gold to distinguish from county purple
-  // Use fuzzy matching: check if any active tribe name is contained in
-  // or contains the GeoJSON NAME (handles partial name differences)
-  const tribalFeatures = map.querySourceFeatures('tribal', { sourceLayer: undefined });
+  // Use full GeoJSON data for matching (not querySourceFeatures which only sees viewport)
   const matchedNames = new Set();
-  for (const feature of tribalFeatures) {
+  const tribalFeaturesList = window._tribalGeoJSON ? window._tribalGeoJSON.features : [];
+  for (const feature of tribalFeaturesList) {
     const geoName = (feature.properties.NAME || '').toLowerCase();
     for (const tribe of activeTribes) {
       const tribeLower = tribe.toLowerCase();
