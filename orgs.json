@@ -13,7 +13,7 @@
     ],
     "states": [],
     "networks": [
-      "Jefferson Collaborative for Health Equity"
+      "recSdexS4vjjxutku"
     ]
   },
   {
@@ -29,21 +29,33 @@
       "CO"
     ],
     "networks": [
-      "Belonging Colorado",
-      "Better Together America",
-      "Civic Health Project",
-      "Collective Impact Forum",
-      "Braver Angels",
-      "National Coalition for Dialogue and Deliberation",
-      "Listen First Coalition",
-      "New Pluralists",
-      "Presencing Institute",
-      "Trust for Civic Life",
+      "reccKhEygqRcdsQni",
+      "recGQuNk4idWhNKAk",
+      "recnWX3ASzpXbgcXm",
+      "recbls0d4DqzFfQMe",
+      "rec0zh7XE6DsyTW9i",
+      "reclH41mf7g5iclrc",
+      "recUiJgWbaY15dVO3",
+      "rec3hJh6qGLfaWK7U",
+      "rec5yY8UXMa77euY2",
+      "recv3cKF3ygSp1xGQ",
       "Civic Collaboratory"
     ]
   },
   {
     "id": 2,
+    "name": "Chuckanut Health Foundation",
+    "website": "https://www.chuckanuthealthfoundation.org/",
+    "scope": "local",
+    "city": "Bellingham",
+    "hqState": "WA",
+    "mission": "",
+    "fips": [],
+    "states": [],
+    "networks": []
+  },
+  {
+    "id": 3,
     "name": "Washington Economic Justice Alliance",
     "website": "www.waeconomicjusticealliance.com",
     "scope": "statewide",
@@ -54,7 +66,9 @@
     "states": [
       "WA"
     ],
-    "networks": []
+    "networks": [
+      "recE7EOgoxcEZNOji"
+    ]
   },
   {
     "id": 4,
@@ -71,15 +85,15 @@
     ],
     "states": [],
     "networks": [
-      "Imagine Fox Cities",
-      "Inland Empire Vital Conditions Network",
-      "Healthy Communities Delaware",
-      "Contra Costa Together",
-      "Community Initiatives Network",
-      "Democracy Collaborative",
-      "Investing in Flourishing",
-      "Othering & Belonging Institute",
-      "Thriving Together US"
+      "recBTTW6sYykhSN3t",
+      "recauPCr5c55R3a49",
+      "recWVhBsUa5oYuotP",
+      "recHnSCvCI9YOxmBO",
+      "rec80rbu58rK3c5R8",
+      "recDuoswpcgHqzwBT",
+      "recnPEx1HMy5jqxVx",
+      "rec2uyGWJu6YVbR1O",
+      "recuqtDd7OsMcc84b"
     ],
     "tribalNations": [
       "Oneida (WI)"
@@ -87,6 +101,21 @@
   },
   {
     "id": 5,
+    "name": "OSF HealthCare",
+    "website": "",
+    "scope": "statewide",
+    "city": "",
+    "hqState": "",
+    "mission": "",
+    "fips": [],
+    "states": [
+      "IL",
+      "MI"
+    ],
+    "networks": []
+  },
+  {
+    "id": 6,
     "name": "Midtown Assistance Center",
     "website": "http://www.midtownassistancecenter.org",
     "scope": "local",
@@ -100,7 +129,27 @@
     "networks": []
   },
   {
-    "id": 6,
+    "id": 7,
+    "name": "Memorial Health",
+    "website": "Memorial.health",
+    "scope": "local",
+    "city": "Lincoln",
+    "hqState": "IL",
+    "mission": "",
+    "fips": [
+      17107,
+      17125,
+      17129,
+      17137,
+      17167,
+      17061,
+      17113
+    ],
+    "states": [],
+    "networks": []
+  },
+  {
+    "id": 8,
     "name": "Institute for People, Place, and Possibility (IP3)",
     "website": "https://www.i-p3.org/",
     "scope": "national",
@@ -110,22 +159,37 @@
     "fips": [],
     "states": [],
     "networks": [
-      "Contra Costa Together",
-      "Inland Empire Vital Conditions Network",
-      "North Sound Accountable Community for Health",
-      "Northwest Regional Primary Care Association",
-      "Wild, Wonderful & Healthy West Virginia",
-      "Healthy Communities Delaware",
-      "Thriving Together North Central Washington",
-      "Community Initiatives Network",
-      "Foundation for Social Connection",
-      "Hold.Health",
-      "Thriving Together US",
-      "WIN Network, WE in the World"
+      "recHnSCvCI9YOxmBO",
+      "recauPCr5c55R3a49",
+      "rec6X89m4V9Ejx9vK",
+      "recNCKqSukg4vwUTn",
+      "recupCLqloIPW14iZ",
+      "recWVhBsUa5oYuotP",
+      "rec80rbu58rK3c5R8",
+      "rec079gv4nrQ4FTzk",
+      "recXGmFOGU8HHGYnV",
+      "recuqtDd7OsMcc84b",
+      "recra7yOylK6lV4cT"
     ]
   },
   {
-    "id": 7,
+    "id": 9,
+    "name": "Yakima Neighborhood Health Services",
+    "website": "www.ynhs.org",
+    "scope": "local",
+    "city": "Yakima",
+    "hqState": "WA",
+    "mission": "",
+    "fips": [
+      53077
+    ],
+    "states": [],
+    "networks": [
+      "recNCKqSukg4vwUTn"
+    ]
+  },
+  {
+    "id": 11,
     "name": "Georgia Health Policy Center",
     "website": "ghpc.gsu.edu",
     "scope": "national",
@@ -135,15 +199,58 @@
     "fips": [],
     "states": [],
     "networks": [
-      "Atlanta Regional Collaborative for Health Improvement",
-      "Federal Reserve Bank, Missing Markets Initiative",
-      "WIN Network, WE in the World",
-      "Investing in Flourishing"
+      "rec4919amSUsgMaZ0",
+      "recer0PNQ5YeoLkAM",
+      "recra7yOylK6lV4cT",
+      "recnPEx1HMy5jqxVx"
     ]
   },
   {
-    "id": 8,
-    "name": "Grady Health Sustem",
+    "id": 12,
+    "name": "HealthierHere",
+    "website": "https://www.healthierhere.org/",
+    "scope": "local",
+    "city": "Seattle",
+    "hqState": "WA",
+    "mission": "",
+    "fips": [
+      53033
+    ],
+    "states": [],
+    "networks": [
+      "rec4wnufViaiUiqok",
+      "recNCKqSukg4vwUTn",
+      "recjypP4ViIlEVtCc",
+      "recE7EOgoxcEZNOji",
+      "rec6X89m4V9Ejx9vK",
+      "recIqXmtn54xYPPXG"
+    ],
+    "tribalNations": [
+      "Muckleshoot Indian Tribe",
+      "Cowlitz Indian Tribe",
+      "Snoqualmie Indian Tribe"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Civic Commons",
+    "website": "www.civic-commons.org",
+    "scope": "national",
+    "city": "Seattle",
+    "hqState": "WA",
+    "mission": "",
+    "fips": [],
+    "states": [],
+    "networks": [
+      "rec6X89m4V9Ejx9vK",
+      "recE7EOgoxcEZNOji",
+      "recjypP4ViIlEVtCc",
+      "rec2uyGWJu6YVbR1O"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Grady Health System",
     "website": "Greadyhealth.org",
     "scope": "local",
     "city": "Atlanta",
@@ -152,12 +259,12 @@
     "fips": [],
     "states": [],
     "networks": [
-      "Atlanta Regional Collaborative for Health Improvement",
+      "rec4919amSUsgMaZ0",
       "America\u2019s Essential Hospitals"
     ]
   },
   {
-    "id": 9,
+    "id": 15,
     "name": "Palm Health Foundation",
     "website": "www.palmhealthfoundation.org",
     "scope": "local",
@@ -169,12 +276,12 @@
     ],
     "states": [],
     "networks": [
-      "BeWell Palm Beach County",
+      "recqLy30hLGB1CCo1",
       "Palm Beach County Culture of Health Network"
     ]
   },
   {
-    "id": 10,
+    "id": 16,
     "name": "Metroparks Toledo",
     "website": "Metroparks Toledo.com",
     "scope": "local",
@@ -186,7 +293,7 @@
     "networks": []
   },
   {
-    "id": 11,
+    "id": 17,
     "name": "Leading Public Health",
     "website": "LeadingPublicHealth.com",
     "scope": "national",
@@ -198,7 +305,7 @@
     "networks": []
   },
   {
-    "id": 12,
+    "id": 18,
     "name": "Mercy Care",
     "website": "Www.mercyatlanta.org",
     "scope": "local",
