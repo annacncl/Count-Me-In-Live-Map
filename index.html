@@ -837,12 +837,30 @@ function applyDensity(density) {
   // Dynamically rescale color stops based on actual max count
   const values = Object.values(density);
   const maxCount = values.length > 0 ? Math.max(...values) : 1;
-  const s = (frac) => Math.max(1, Math.round(frac * maxCount));
+
+  // Build stops ensuring strictly ascending order with no duplicates
+  const rawStops = [
+    [1, C[1]],
+    [Math.max(2, Math.round(0.2 * maxCount)), C[2]],
+    [Math.max(3, Math.round(0.4 * maxCount)), C[3]],
+    [Math.max(4, Math.round(0.6 * maxCount)), C[4]],
+    [Math.max(5, Math.round(0.8 * maxCount)), C[5]],
+    [Math.max(6, maxCount), C[6]],
+  ];
+  // Deduplicate: ensure each input is strictly greater than the previous
+  const stops = [];
+  let lastVal = 0;
+  for (const [val, color] of rawStops) {
+    const v = Math.max(val, lastVal + 1);
+    stops.push(v, color);
+    lastVal = v;
+  }
+
   map.setPaintProperty('county-fills', 'fill-color', [
     'case',
     ['>', ['coalesce', ['feature-state', 'count'], 0], 0],
     ['interpolate', ['linear'], ['feature-state', 'count'],
-      1, C[1], s(0.2), C[2], s(0.4), C[3], s(0.6), C[4], s(0.8), C[5], maxCount, C[6]
+      ...stops
     ],
     'rgba(0,0,0,0)'
   ]);
