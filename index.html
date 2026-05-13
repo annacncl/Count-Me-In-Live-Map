@@ -320,6 +320,7 @@
     <div><span class="stat-value" id="stat-networks">—</span><span class="stat-label">networks</span></div>
     <div><span class="stat-value" id="stat-counties">—</span><span class="stat-label">counties</span></div>
     <div><span class="stat-value" id="stat-states">—</span><span class="stat-label">states</span></div>
+    <div><span class="stat-value" id="stat-tribal">—</span><span class="stat-label">tribal nations</span></div>
   </div>
 </header>
 
@@ -402,6 +403,7 @@
 
 <div class="county-tooltip" id="tooltip">
   <div class="tt-name" id="tt-name"></div>
+  <div class="tt-tribal" id="tt-tribal" style="font-size:11px;color:#f59e0b;font-weight:600;margin-top:2px;display:none;"></div>
   <div><span class="tt-count" id="tt-count"></span> <span class="tt-label">organizations</span></div>
   <div class="tt-hint">Click to filter list</div>
 </div>
@@ -737,14 +739,28 @@ map.on('load', () => {
     tt.style.left = (e.point.x + 16) + 'px';
     tt.style.top = (e.point.y - 10) + 'px';
 
+    // Check if cursor is also over an active tribal polygon
+    const tribalFeatures = map.queryRenderedFeatures(e.point, { layers: ['tribal-fills'] });
+    const activeTribe = tribalFeatures.find(f => {
+      const name = f.properties.NAME;
+      return allOrgs.some(o =>
+        o.tribalNations && o.tribalNations.some(t => t.toLowerCase() === name.toLowerCase())
+      );
+    });
+    const tribalEl = document.getElementById('tt-tribal');
+    if (activeTribe) {
+      tribalEl.textContent = '✦ ' + activeTribe.properties.NAME + ' (Tribal Nation)';
+      tribalEl.style.display = 'block';
+    } else {
+      tribalEl.style.display = 'none';
+    }
+
     if (filterState.scope === 'statewide') {
-      // Show state-level total when in statewide view
       const stateFipsPrefix = Math.floor(fips / 1000);
       const stateTotal = filterOrgs()
         .filter(o => o.scope === 'statewide')
         .filter(o => (o.states || []).some(abbr => STATE_FIPS[abbr] === stateFipsPrefix))
         .length;
-      // Get state name from abbr
       const stateAbbr = Object.keys(STATE_FIPS).find(k => STATE_FIPS[k] === stateFipsPrefix) || '';
       document.getElementById('tt-name').textContent = stateAbbr || 'State';
       document.getElementById('tt-count').textContent = stateTotal;
@@ -757,6 +773,7 @@ map.on('load', () => {
   map.on('mouseleave', 'county-fills', () => {
     map.getCanvas().style.cursor = '';
     document.getElementById('tooltip').classList.remove('visible');
+    document.getElementById('tt-tribal').style.display = 'none';
   });
 
   map.on('click', 'county-fills', (e) => {
@@ -971,10 +988,19 @@ function updateAll() {
 
   const uniqueCounties = Object.keys(fullDensity).length;
   const uniqueStates = new Set(Object.keys(fullDensity).map(f=>Math.floor(parseInt(f)/1000))).size;
+  const selectedNetworkNames = getSelectedNetworkNames();
+  const filteredNetworkCount = allNetworks.filter(n => selectedNetworkNames.has(n.name)).length;
+  const tribalNationCount = new Set(
+    filtered.flatMap(o => o.tribalNations || [])
+  ).size;
+
   document.getElementById('stat-orgs').textContent = filtered.length.toLocaleString();
-  document.getElementById('stat-networks').textContent = allNetworks.length.toLocaleString();
+  document.getElementById('stat-networks').textContent = filteredNetworkCount.toLocaleString();
   document.getElementById('stat-counties').textContent = uniqueCounties.toLocaleString();
   document.getElementById('stat-states').textContent = uniqueStates;
+  if (document.getElementById('stat-tribal')) {
+    document.getElementById('stat-tribal').textContent = tribalNationCount;
+  }
 
   if (mapReady) {
     applyDensity(fullDensity);
