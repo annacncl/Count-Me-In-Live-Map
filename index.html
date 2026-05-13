@@ -923,9 +923,7 @@ function getSelectedNetworkNames() {
       for (const n of org.networks) names.add(n.trim());
     }
   }
-  console.log('[DEBUG] orgs with networks:', allOrgs.filter(o => o.networks && o.networks.length).length);
-  console.log('[DEBUG] selected network names:', names.size, [...names].slice(0,3));
-  console.log('[DEBUG] allNetworks count:', allNetworks.length);
+
   return names;
 }
 
@@ -984,9 +982,7 @@ function renderNetworkList() {
   const localNets = allNetworks.filter(n =>
     (n.scale === 'local' || n.scale === 'statewide') && selectedNames.has(n.name)
   );
-  console.log('[DEBUG2] listEl:', listEl);
-  console.log('[DEBUG2] localNets:', localNets.length);
-  console.log('[DEBUG2] showNetworks:', showNetworks);
+
   listEl.innerHTML = localNets.map(n => {
     const tag = n.scale === 'statewide'
       ? '<span class="network-scope-tag statewide">Statewide</span>'
