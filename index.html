@@ -747,9 +747,12 @@ map.on('load', () => {
     // Check if cursor is also over an active tribal polygon
     const tribalFeatures = map.queryRenderedFeatures(e.point, { layers: ['tribal-fills'] });
     const activeTribe = tribalFeatures.find(f => {
-      const name = f.properties.NAME;
+      const geoName = (f.properties.NAME || '').toLowerCase();
       return allOrgs.some(o =>
-        o.tribalNations && o.tribalNations.some(t => t.toLowerCase() === name.toLowerCase())
+        o.tribalNations && o.tribalNations.some(t => {
+          const tl = t.toLowerCase();
+          return geoName === tl || geoName.includes(tl) || tl.includes(geoName);
+        })
       );
     });
     const tribalEl = document.getElementById('tt-tribal');
@@ -801,10 +804,12 @@ map.on('load', () => {
     const tribalName = e.features[0].properties.NAME;
     if (!tribalName) return;
     // Find orgs that reference this tribal nation
+    const tribalLower = tribalName.toLowerCase();
     const matchingOrgs = allOrgs.filter(o =>
-      o.tribalNations && o.tribalNations.some(t =>
-        t.toLowerCase() === tribalName.toLowerCase()
-      )
+      o.tribalNations && o.tribalNations.some(t => {
+        const tl = t.toLowerCase();
+        return tribalLower === tl || tribalLower.includes(tl) || tl.includes(tribalLower);
+      })
     );
     if (matchingOrgs.length === 0) return;
     // Show tooltip with tribal name and orgs
@@ -886,16 +891,31 @@ function applyTribalDensity(orgs) {
   if (activeTribes.size === 0) return;
 
   // Color tribal fills using amber/gold to distinguish from county purple
+  // Use fuzzy matching: check if any active tribe name is contained in
+  // or contains the GeoJSON NAME (handles partial name differences)
+  const tribalFeatures = map.querySourceFeatures('tribal', { sourceLayer: undefined });
+  const matchedNames = new Set();
+  for (const feature of tribalFeatures) {
+    const geoName = (feature.properties.NAME || '').toLowerCase();
+    for (const tribe of activeTribes) {
+      const tribeLower = tribe.toLowerCase();
+      if (geoName === tribeLower || geoName.includes(tribeLower) || tribeLower.includes(geoName)) {
+        matchedNames.add(feature.properties.NAME);
+        break;
+      }
+    }
+  }
+
   const tribalColor = [
     'case',
-    ['in', ['downcase', ['get', 'NAME']], ['literal', [...activeTribes]]],
+    ['in', ['get', 'NAME'], ['literal', [...matchedNames]]],
     '#f59e0b',
     'rgba(0,0,0,0)'
   ];
   map.setPaintProperty('tribal-fills', 'fill-color', tribalColor);
   map.setPaintProperty('tribal-borders', 'line-opacity', [
     'case',
-    ['in', ['downcase', ['get', 'NAME']], ['literal', [...activeTribes]]],
+    ['in', ['get', 'NAME'], ['literal', [...matchedNames]]],
     0.9,
     0
   ]);
