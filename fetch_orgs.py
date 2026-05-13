@@ -26,24 +26,11 @@ SCOPE_MAP = {
     'Statewide 1+': 'statewide',
 }
 
+# Only override when Airtable form name differs from Census GeoJSON NAME
+# All other names pass through as-is and are matched fuzzy in the map
 TRIBAL_NAME_MAP = {
     'Oneida Nation': 'Oneida (WI)',
-    'Menominee Indian Tribe': 'Menominee',
-    'Ho-Chunk Nation': 'Ho-Chunk Nation',
-    'Bad River Band': 'Bad River',
-    'Red Cliff Band': 'Red Cliff',
-    'Lac du Flambeau': 'Lac du Flambeau',
-    'St. Croix Chippewa': 'St. Croix',
-    'Sokaogon Chippewa': 'Sokaogon Chippewa',
-    'Stockbridge-Munsee': 'Stockbridge Munsee',
-    'Forest County Potawatomi': 'Forest County Potawatomi',
-    'Red Lake Nation': 'Red Lake',
-    'Leech Lake Band': 'Leech Lake',
-    'White Earth Nation': 'White Earth',
-    'Mille Lacs Band': 'Mille Lacs',
-    'Fond du Lac Band': 'Fond du Lac',
-    'Grand Portage Band': 'Grand Portage',
-    'Bois Forte Band': 'Bois Forte',
+    'Oneida Nation of Wisconsin': 'Oneida (WI)',
 }
 
 NETWORK_FIELDS = [
