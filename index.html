@@ -433,7 +433,7 @@ const C = ['#f3f0ff','#ddd6fe','#c4b5fd','#a78bfa','#7c3aed','#5b21b6','#3b0764'
 
 // State + app state
 let allOrgs = [], allNetworks = [], filterState = {scope:'all', search:''}, selectedFips = null, mapReady = false;
-let showNetworks = false;
+let showNetworks = true;
 let showLabels = false;
 let fullDensity = {};      // fips (int) -> count
 let prevDensityKeys = [];  // track what we set so we can clear it
@@ -727,6 +727,11 @@ map.on('load', () => {
   });
 
   mapReady = true;
+  // Networks are on by default
+  map.setLayoutProperty('network-pins-local', 'visibility', 'visible');
+  map.setLayoutProperty('network-pins-statewide', 'visibility', 'visible');
+  document.getElementById('network-toggle-btn').classList.add('active');
+  document.getElementById('network-list-section').classList.add('visible');
   if (allOrgs.length > 0) updateAll();
 
   map.on('mousemove', 'county-fills', (e) => {
