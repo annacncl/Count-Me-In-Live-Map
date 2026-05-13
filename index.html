@@ -984,6 +984,9 @@ function renderNetworkList() {
   const localNets = allNetworks.filter(n =>
     (n.scale === 'local' || n.scale === 'statewide') && selectedNames.has(n.name)
   );
+  console.log('[DEBUG2] listEl:', listEl);
+  console.log('[DEBUG2] localNets:', localNets.length);
+  console.log('[DEBUG2] showNetworks:', showNetworks);
   listEl.innerHTML = localNets.map(n => {
     const tag = n.scale === 'statewide'
       ? '<span class="network-scope-tag statewide">Statewide</span>'
