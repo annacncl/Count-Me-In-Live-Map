@@ -911,23 +911,33 @@ function getSelectedNetworkNames() {
 function updateNetworkPins() {
   const selectedNames = getSelectedNetworkNames();
   const visibleNetworks = allNetworks.filter(n =>
-    n.scale !== 'nationwide' && n.lat && n.lng && selectedNames.has(n.name)
+    n.scale !== 'nationwide' && selectedNames.has(n.name) &&
+    (n.lat && n.lng || (n.pins && n.pins.length))
   );
 
-  // Apply small offset to networks that share the same state centroid
-  const coordCount = {};
+  // Expand multi-state networks into one entry per pin location
+  const pinEntries = [];
   visibleNetworks.forEach(n => {
+    if (n.pins && n.pins.length > 1) {
+      n.pins.forEach(p => pinEntries.push({ ...n, lng: p.lng, lat: p.lat }));
+    } else if (n.lat && n.lng) {
+      pinEntries.push(n);
+    }
+  });
+
+  // Apply small offset to pins that share the same coordinate
+  const coordCount = {};
+  pinEntries.forEach(n => {
     const key = `${n.lng.toFixed(2)},${n.lat.toFixed(2)}`;
     coordCount[key] = (coordCount[key] || 0) + 1;
   });
   const coordIndex = {};
-  const features = visibleNetworks.map(n => {
+  const features = pinEntries.map(n => {
     const key = `${n.lng.toFixed(2)},${n.lat.toFixed(2)}`;
     coordIndex[key] = (coordIndex[key] || 0);
     const idx = coordIndex[key];
     coordIndex[key]++;
     const total = coordCount[key];
-    // Spread pins in a small circle if stacked
     const angle = (idx / total) * 2 * Math.PI;
     const radius = total > 1 ? 0.08 : 0;
     const lng = n.lng + Math.cos(angle) * radius;
@@ -1010,6 +1020,7 @@ function updateAll() {
   if (mapReady) {
     applyDensity(fullDensity);
     applyTribalDensity(filtered);
+    if (showNetworks) updateNetworkPins();
   }
   renderOrgList();
   renderNationalList();
