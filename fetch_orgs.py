@@ -162,12 +162,45 @@ def convert_record(record, idx):
 
     return org
 
+def fetch_network_id_map():
+    """Fetch Networks Base to build a map of Airtable record ID -> Network Name."""
+    records = []
+    offset = None
+    table_encoded = urllib.parse.quote('Networks Base')
+
+    while True:
+        url = f'https://api.airtable.com/v0/{BASE_ID}/{table_encoded}'
+        if offset:
+            url += f'?offset={offset}'
+        req = urllib.request.Request(url, headers={
+            'Authorization': f'Bearer {AIRTABLE_API_KEY}',
+            'Content-Type': 'application/json',
+        })
+        with urllib.request.urlopen(req) as resp:
+            data = json.loads(resp.read())
+        records.extend(data.get('records', []))
+        offset = data.get('offset')
+        if not offset:
+            break
+
+    id_to_name = {}
+    for r in records:
+        name = r.get('fields', {}).get('Network Name', '').strip()
+        if name:
+            id_to_name[r['id']] = name
+    print(f'  Built network ID map: {len(id_to_name)} networks')
+    return id_to_name
+
+
 def main(output_path='orgs.json'):
     if not AIRTABLE_API_KEY:
         print('ERROR: AIRTABLE_API_KEY environment variable not set')
         sys.exit(1)
 
-    print(f'Fetching records from Airtable...')
+    print('Fetching network ID map from Airtable...')
+    network_id_map = fetch_network_id_map()
+
+    print(f'Fetching org records from Airtable...')
     records = fetch_all_records()
     print(f'Fetched {len(records)} total records')
 
@@ -175,6 +208,14 @@ def main(output_path='orgs.json'):
     for i, record in enumerate(records):
         org = convert_record(record, i)
         if org:
+            # Resolve network linked record IDs to names
+            resolved = []
+            for n in org.get('networks', []):
+                if n.startswith('rec') and n in network_id_map:
+                    resolved.append(network_id_map[n])
+                elif not n.startswith('rec'):
+                    resolved.append(n)
+            org['networks'] = resolved
             orgs.append(org)
 
     with open(output_path, 'w') as f:
