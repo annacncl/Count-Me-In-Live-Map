@@ -88,20 +88,21 @@ def parse_geography(geo_str):
     state_abbrs = []
     all_states = {s.abbr for s in us.states.STATES} | {'DC'}
 
-    # Split on semicolons first, then handle comma-separated states within each part
+    # Split on semicolons first
     parts = [p.strip() for p in re.split(r';', geo_str) if p.strip()]
-    expanded = []
-    for part in parts:
-        # Check if it's 'County Name, ST' (one comma with 2-letter state at end)
-        m = re.match(r'^(.+),\s*([A-Z]{2})$', part)
-        if m and m.group(2) in all_states:
-            expanded.append(part)
-        else:
-            # Comma-separated state abbreviations
-            for sub in [s.strip() for s in part.split(',') if s.strip()]:
-                expanded.append(sub)
 
-    for part in expanded:
+    for part in parts:
+        # First check: is this a comma-separated list of state abbreviations only?
+        # e.g. "ID, OR, WA, AK"
+        sub_parts = [s.strip() for s in part.split(',') if s.strip()]
+        if all(s in all_states for s in sub_parts):
+            # Pure state list — add each as a state
+            for s in sub_parts:
+                if s not in state_abbrs:
+                    state_abbrs.append(s)
+            continue
+
+        # Second check: is it "County Name, ST" format?
         m = re.match(r'^(.+),\s*([A-Z]{2})$', part)
         if m and m.group(2) in all_states:
             county = m.group(1).strip()
