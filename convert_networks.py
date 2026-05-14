@@ -199,6 +199,18 @@ def compute_centroid(fips_list):
     return round(avg_lng, 4), round(avg_lat, 4)
 
 
+def _set_state_pins(network, abbrs):
+    """Set lng/lat (single state) or pins array (multiple states) on a network dict."""
+    valid = [abbr for abbr in abbrs if abbr in STATE_CENTROIDS]
+    if not valid:
+        return
+    if len(valid) == 1:
+        network['lng'], network['lat'] = STATE_CENTROIDS[valid[0]]
+    else:
+        network['pins'] = [{'lng': STATE_CENTROIDS[a][0], 'lat': STATE_CENTROIDS[a][1]} for a in valid]
+        network['lng'], network['lat'] = STATE_CENTROIDS[valid[0]]
+
+
 def convert(input_path, output_path):
     df = pd.read_csv(input_path)
     networks = []
@@ -238,9 +250,7 @@ def convert(input_path, output_path):
             if states_raw and states_raw != 'nan':
                 abbrs = [a.strip() for a in states_raw.split(',') if a.strip()]
                 network['states'] = abbrs
-                # Pin at first state's centroid
-                if abbrs and abbrs[0] in STATE_CENTROIDS:
-                    network['lng'], network['lat'] = STATE_CENTROIDS[abbrs[0]]
+                _set_state_pins(network, abbrs)
 
         elif scale == 'local':
             all_fips = []
@@ -256,14 +266,13 @@ def convert(input_path, output_path):
                     else:
                         failed.append({'network': name, 'county': county, 'state': state_name})
 
-            # If no counties found, try state centroid
             if not all_fips:
+                # No counties — fall back to one pin per state
                 states_raw = str(row.get('What state(s)? Local', '')).strip()
                 if states_raw and states_raw != 'nan':
                     abbrs = [a.strip() for a in states_raw.split(',') if a.strip()]
                     network['states'] = abbrs
-                    if abbrs and abbrs[0] in STATE_CENTROIDS:
-                        network['lng'], network['lat'] = STATE_CENTROIDS[abbrs[0]]
+                    _set_state_pins(network, abbrs)
             else:
                 network['fips'] = list(set(all_fips))
                 lng, lat = compute_centroid(all_fips)
