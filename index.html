@@ -404,7 +404,7 @@
   <div class="tt-name" id="tt-name"></div>
   <div class="tt-tribal" id="tt-tribal" style="font-size:11px;color:#f59e0b;font-weight:600;margin-top:2px;display:none;"></div>
   <div><span class="tt-count" id="tt-count"></span> <span class="tt-label">organizations</span></div>
-  <div class="tt-hint">Click to filter list</div>
+  <div class="tt-hint">Click again or click away to dismiss</div>
 </div>
 
 <div class="about-bar" id="about-bar">
@@ -737,17 +737,21 @@ map.on('load', () => {
   document.getElementById('network-list-section').classList.add('visible');
   if (allOrgs.length > 0) updateAll();
 
-  map.on('mousemove', 'county-fills', (e) => {
+  map.on('mouseenter', 'county-fills', () => { map.getCanvas().style.cursor = 'pointer'; });
+  map.on('mouseleave', 'county-fills', () => { map.getCanvas().style.cursor = ''; });
+
+  map.on('click', 'county-fills', (e) => {
     if (!e.features.length) return;
-    map.getCanvas().style.cursor = 'pointer';
     const props = e.features[0].properties;
     const fips = parseInt(props.FIPS);
+
+    // Show tooltip at click location
     const tt = document.getElementById('tooltip');
-    tt.classList.add('visible');
     tt.style.left = (e.point.x + 16) + 'px';
     tt.style.top = (e.point.y - 10) + 'px';
+    tt.classList.add('visible');
 
-    // Check if cursor is also over an active tribal polygon
+    // Check if click is also over an active tribal polygon
     const tribalFeatures = map.queryRenderedFeatures(e.point, { layers: ['tribal-fills'] });
     const activeTribe = tribalFeatures.find(f => {
       const geoName = (f.properties.NAME || '').toLowerCase();
@@ -780,25 +784,29 @@ map.on('load', () => {
       document.getElementById('tt-name').textContent = props.COUNTY || 'County';
       document.getElementById('tt-count').textContent = count;
     }
-  });
-  map.on('mouseleave', 'county-fills', () => {
-    map.getCanvas().style.cursor = '';
-    document.getElementById('tooltip').classList.remove('visible');
-    document.getElementById('tt-tribal').style.display = 'none';
-  });
 
-  map.on('click', 'county-fills', (e) => {
-    if (!e.features.length) return;
-    const fips = parseInt(e.features[0].properties.FIPS);
+    // Highlight selected county and filter org list
     clearHighlight();
-    if (selectedFips === fips) { selectedFips = null; }
-    else {
+    if (selectedFips === fips) {
+      selectedFips = null;
+      tt.classList.remove('visible');
+    } else {
       selectedFips = fips;
       highlightedFips = [String(fips)];
       map.setFeatureState({source:'counties',sourceLayer:'original',id:fips},{highlighted:true});
     }
     clearOrgDetail();
     renderOrgList();
+  });
+
+  // Close tooltip when clicking blank map area
+  map.on('click', (e) => {
+    const countyFeatures = map.queryRenderedFeatures(e.point, { layers: ['county-fills'] });
+    const tribalFeatures = map.queryRenderedFeatures(e.point, { layers: ['tribal-fills'] });
+    if (countyFeatures.length === 0 && tribalFeatures.length === 0) {
+      document.getElementById('tooltip').classList.remove('visible');
+      document.getElementById('tt-tribal').style.display = 'none';
+    }
   });
 
   // ── TRIBAL CLICK HANDLER ──
