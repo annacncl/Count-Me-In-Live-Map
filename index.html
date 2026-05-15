@@ -373,7 +373,6 @@
 <aside class="national-panel" id="national-panel">
   <div class="national-panel-header">
     <h3>Nationwide Influence</h3>
-    <span class="national-count" id="national-count"></span>
   </div>
   <div class="national-panel-note">These organizations work nationwide and appear here rather than on the heat map.</div>
   <div class="national-list" id="national-list"></div>
@@ -1052,8 +1051,10 @@ function updateAll() {
     filtered.flatMap(o => o.tribalNations || [])
   ).size;
 
-  document.getElementById('stat-orgs').textContent = filtered.length.toLocaleString();
-  document.getElementById('stat-networks').textContent = filteredNetworkCount.toLocaleString();
+  // Org count includes national orgs (filtered may exclude them from map density but they still count)
+  const allFilteredOrgs = filterOrgs();
+  document.getElementById('stat-orgs').textContent = allFilteredOrgs.length.toLocaleString();
+  document.getElementById('stat-networks').textContent = allNetworks.length.toLocaleString();
   document.getElementById('stat-counties').textContent = uniqueCounties.toLocaleString();
   document.getElementById('stat-states').textContent = uniqueStates;
   if (document.getElementById('stat-tribal')) {
@@ -1123,8 +1124,6 @@ function renderNationalList() {
   const nats = allOrgs.filter(o => o.scope === 'national');
   const selectedNames = getSelectedNetworkNames();
   const nationwideNets = showNetworks ? allNetworks.filter(n => n.scale === 'nationwide' && selectedNames.has(n.name)) : [];
-  const total = nats.length + nationwideNets.length;
-  document.getElementById('national-count').textContent = total;
 
   const orgsHtml = nats.map(o => `
     <div class="national-org-item">
