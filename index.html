@@ -710,7 +710,7 @@ map.on('load', () => {
 
   // Network pin popup
   const networkPopup = new mapboxgl.Popup({
-    closeButton: true, closeOnClick: false, offset: 14, className: 'network-popup'
+    closeButton: true, closeOnClick: true, offset: 14, className: 'network-popup'
   });
 
   ['network-pins-local', 'network-pins-statewide'].forEach(layerId => {
@@ -1025,7 +1025,7 @@ function renderNetworkList() {
         map.flyTo({ center: [lng, lat], zoom: 7, duration: 800 });
         const scaleClass = scale === 'local' ? 'local' : 'statewide';
         const scaleLabel = scale === 'local' ? 'Local' : 'Statewide';
-        new mapboxgl.Popup({ closeButton: true, offset: 14, className: 'network-popup' })
+        new mapboxgl.Popup({ closeButton: true, closeOnClick: true, offset: 14, className: 'network-popup' })
           .setLngLat([lng, lat])
           .setHTML(`
             <div class="np-name">${name}</div>
