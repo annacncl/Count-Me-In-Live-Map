@@ -1062,7 +1062,7 @@ function updateAll() {
   // Org count includes national orgs (filtered may exclude them from map density but they still count)
   const allFilteredOrgs = filterOrgs();
   document.getElementById('stat-orgs').textContent = allFilteredOrgs.length.toLocaleString();
-  document.getElementById('stat-networks').textContent = allNetworks.length.toLocaleString();
+  document.getElementById('stat-networks').textContent = filteredNetworkCount.toLocaleString();
   document.getElementById('stat-counties').textContent = uniqueCounties.toLocaleString();
   document.getElementById('stat-states').textContent = uniqueStates;
   if (document.getElementById('stat-tribal')) {
