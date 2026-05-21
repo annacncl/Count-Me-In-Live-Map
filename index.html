@@ -687,12 +687,13 @@ map.on('load', () => {
       'icon-image': 'pin-local',
       'icon-size': 1.0,
       'icon-anchor': 'bottom',
-      'icon-allow-overlap': true
+      'icon-allow-overlap': true,
+      'icon-offset': ['get', 'iconOffset']
     },
     paint: {}
   });
 
-  // Statewide network pins (amber/orange)
+  // Statewide network pins
   map.addLayer({
     id: 'network-pins-statewide',
     type: 'symbol',
@@ -703,7 +704,8 @@ map.on('load', () => {
       'icon-image': 'pin-statewide',
       'icon-size': 1.0,
       'icon-anchor': 'bottom',
-      'icon-allow-overlap': true
+      'icon-allow-overlap': true,
+      'icon-offset': ['get', 'iconOffset']
     },
     paint: {}
   });
@@ -987,14 +989,12 @@ function updateNetworkPins() {
     const idx = coordIndex[key];
     coordIndex[key]++;
     const total = coordCount[key];
-    const angle = (idx / total) * 2 * Math.PI;
-    const radius = total > 1 ? 0.08 : 0;
-    const lng = n.lng + Math.cos(angle) * radius;
-    const lat = n.lat + Math.sin(angle) * radius * 0.5;
+    // Spread stacked pins with pixel offsets (zoom-independent, 22px spacing)
+    const dx = total > 1 ? Math.round((idx - (total - 1) / 2) * 22) : 0;
     return {
       type: 'Feature',
-      geometry: { type: 'Point', coordinates: [lng, lat] },
-      properties: { name: n.name, scale: n.scale, website: n.website || '' }
+      geometry: { type: 'Point', coordinates: [n.lng, n.lat] },
+      properties: { name: n.name, scale: n.scale, website: n.website || '', iconOffset: [dx, 0] }
     };
   });
 
