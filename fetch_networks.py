@@ -82,7 +82,7 @@ def parse_geography(geo_str):
       - 'GA'
     """
     if not geo_str or not geo_str.strip():
-        return [], [], None, None
+        return [], [], None, None, []
 
     fips_list = []
     state_abbrs = []
