@@ -233,9 +233,11 @@
     "website": "https://waeconomicjusticealliance.com/",
     "scale": "local",
     "fips": [],
-    "states": [],
-    "lng": null,
-    "lat": null
+    "states": [
+      "WA"
+    ],
+    "lng": -120.74,
+    "lat": 47.4
   },
   {
     "id": 67,
@@ -333,9 +335,11 @@
     "website": "https://trentonhealthteam.org/",
     "scale": "local",
     "fips": [],
-    "states": [],
-    "lng": null,
-    "lat": null
+    "states": [
+      "NJ"
+    ],
+    "lng": -74.67,
+    "lat": 40.14
   },
   {
     "id": 81,
@@ -858,9 +862,11 @@
     "website": "https://wvruralhealth.org/programs/wwhwv/",
     "scale": "local",
     "fips": [],
-    "states": [],
-    "lng": null,
-    "lat": null
+    "states": [
+      "WV"
+    ],
+    "lng": -80.62,
+    "lat": 38.64
   },
   {
     "id": 70,
