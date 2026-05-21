@@ -669,8 +669,8 @@ map.on('load', () => {
   }
 
   Promise.all([
-    createSVGPin('#2DD4BF', 32),
-    createSVGPin('#fb923c', 36)
+    createSVGPin('#2DD4BF', 24),
+    createSVGPin('#2DD4BF', 24)
   ]).then(([localPin, statewidePin]) => {
     if (!map.hasImage('pin-local')) map.addImage('pin-local', localPin);
     if (!map.hasImage('pin-statewide')) map.addImage('pin-statewide', statewidePin);
@@ -701,7 +701,7 @@ map.on('load', () => {
     layout: {
       visibility: 'none',
       'icon-image': 'pin-statewide',
-      'icon-size': 1.1,
+      'icon-size': 1.0,
       'icon-anchor': 'bottom',
       'icon-allow-overlap': true
     },
