@@ -375,5 +375,26 @@
       "Presencing Institute",
       "Trust for Civic Life"
     ]
+  },
+  {
+    "id": 20,
+    "name": "Thriving Together NCW",
+    "website": "thrivingtogether.org",
+    "scope": "local",
+    "city": "East Wenatchee",
+    "hqState": "WA",
+    "mission": "",
+    "fips": [
+      53007,
+      53017,
+      53025,
+      53047
+    ],
+    "states": [],
+    "networks": [
+      "Thriving Together North Central Washington",
+      "Rippel Foundation, ReThink Health",
+      "Community Initiatives Network"
+    ]
   }
 ]
