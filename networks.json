@@ -34,12 +34,14 @@
     "name": "Palm Beach County Culture of Health Network",
     "website": "https://www.palmhealthfoundation.org/building-our-culture-of-health-network",
     "scale": "local",
-    "fips": [],
+    "fips": [
+      12099
+    ],
     "states": [
       "FL"
     ],
-    "lng": -81.52,
-    "lat": 27.77
+    "lng": -80.1,
+    "lat": 26.65
   },
   {
     "id": 59,
