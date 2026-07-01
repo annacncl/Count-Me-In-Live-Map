@@ -195,6 +195,18 @@
     "lat": null
   },
   {
+    "id": 103,
+    "name": "Pennsylvania Association of Community Health Centers",
+    "website": "https://pachc.org/",
+    "scale": "statewide",
+    "fips": [],
+    "states": [
+      "PA"
+    ],
+    "lng": -77.21,
+    "lat": 40.89
+  },
+  {
     "id": 11,
     "name": "Tri-County Community Health Coalition",
     "website": "https://unitedwayfoxcities.org/communityhealthreport/",
