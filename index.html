@@ -980,12 +980,19 @@ function updateNetworkPins() {
     const idx = coordIndex[key];
     coordIndex[key]++;
     const total = coordCount[key];
-    // Spread stacked pins with pixel offsets (zoom-independent, 22px spacing)
-    const dx = total > 1 ? Math.round((idx - (total - 1) / 2) * 22) : 0;
+    // Spread stacked pins into a circular cluster around the shared point
+    // (zoom-independent, pixel-based) instead of a single-axis line.
+    let dx = 0, dy = 0;
+    if (total > 1) {
+      const radius = 16 + Math.min(total, 10) * 2.5;
+      const angle = (idx / total) * 2 * Math.PI - Math.PI / 2;
+      dx = Math.round(radius * Math.cos(angle));
+      dy = Math.round(radius * Math.sin(angle));
+    }
     return {
       type: 'Feature',
       geometry: { type: 'Point', coordinates: [n.lng, n.lat] },
-      properties: { name: n.name, scale: n.scale, website: n.website || '', iconOffset: [dx, 0] }
+      properties: { name: n.name, scale: n.scale, website: n.website || '', iconOffset: [dx, dy] }
     };
   });
 
