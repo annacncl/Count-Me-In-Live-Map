@@ -222,9 +222,29 @@
     "lat": 44.375
   },
   {
+    "id": 112,
+    "name": "Lehigh Valley Health Network",
+    "website": "https://www.lvhn.org/",
+    "scale": "local",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
     "id": 47,
     "name": "Healthy Places by Design",
     "website": "https://healthyplacesbydesign.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 106,
+    "name": "Council on Foundations",
+    "website": "https://cof.org/",
     "scale": "nationwide",
     "fips": [],
     "states": [],
@@ -439,6 +459,16 @@
     "lat": null
   },
   {
+    "id": 109,
+    "name": "Alabama Alliance",
+    "website": "https://www.idealist.org/en/nonprofit/ed8974bbe51c4cd48fc884d69682b2fc-the-alabama-alliance-birmingham",
+    "scale": "statewide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
     "id": 56,
     "name": "National Association of Community Health Centers",
     "website": "https://www.nachc.org/",
@@ -447,6 +477,45 @@
     "states": [],
     "lng": null,
     "lat": null
+  },
+  {
+    "id": 108,
+    "name": "Grantmakers of Western PA",
+    "website": "https://gwpa.org/",
+    "scale": "local",
+    "fips": [
+      42003,
+      42005,
+      42007,
+      42009,
+      42013,
+      42019,
+      42021,
+      42023,
+      42031,
+      42033,
+      42039,
+      42047,
+      42049,
+      42051,
+      42053,
+      42059,
+      42063,
+      42065,
+      42073,
+      42083,
+      42085,
+      42111,
+      42121,
+      42123,
+      42125,
+      42129
+    ],
+    "states": [
+      "PA"
+    ],
+    "lng": -77.6546,
+    "lat": 40.6232
   },
   {
     "id": 55,
@@ -496,6 +565,16 @@
     "id": 26,
     "name": "Aspen Community Solutions",
     "website": "https://www.aspencommunitysolutions.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 107,
+    "name": "Exponent Philanthropy",
+    "website": "https://exponentphilanthropy.org/",
     "scale": "nationwide",
     "fips": [],
     "states": [],
@@ -581,6 +660,16 @@
     "lat": null
   },
   {
+    "id": 111,
+    "name": "Alabama Arise",
+    "website": "https://alarise.org/",
+    "scale": "statewide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
     "id": 12,
     "name": "Inland Empire Vital Conditions Network",
     "website": "https://ievitalconditionsnetwork.org/",
@@ -599,6 +688,16 @@
     "id": 36,
     "name": "Collective Impact Forum",
     "website": "https://collectiveimpactforum.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 110,
+    "name": "Southern Poverty Law Center",
+    "website": "https://www.splcenter.org/",
     "scale": "nationwide",
     "fips": [],
     "states": [],
@@ -717,6 +816,16 @@
     "lat": 47.695
   },
   {
+    "id": 105,
+    "name": "Grantmakers for Effective Organizations",
+    "website": "https://www.geofunders.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
     "id": 76,
     "name": "Y USA",
     "website": "https://www.ymca.org/",
@@ -831,6 +940,18 @@
     "states": [],
     "lng": null,
     "lat": null
+  },
+  {
+    "id": 104,
+    "name": "PA Health Funders Collaborative",
+    "website": "https://www.pahealthfunderscollaborative.org/",
+    "scale": "statewide",
+    "fips": [],
+    "states": [
+      "PA"
+    ],
+    "lng": -77.21,
+    "lat": 40.89
   },
   {
     "id": 14,
