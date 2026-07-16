@@ -951,21 +951,9 @@ function setHighlight(fipsList) {
   highlightedFips = fipsList.map(String);
 }
 
-function getSelectedNetworkNames() {
-  const names = new Set();
-  for (const org of allOrgs) {
-    if (org.networks) {
-      for (const n of org.networks) names.add(n.trim());
-    }
-  }
-
-  return names;
-}
-
 function updateNetworkPins() {
-  const selectedNames = getSelectedNetworkNames();
   const visibleNetworks = allNetworks.filter(n =>
-    n.scale !== 'nationwide' && selectedNames.has(n.name) &&
+    n.scale !== 'nationwide' &&
     (n.lat && n.lng || (n.pins && n.pins.length))
   );
 
@@ -1011,9 +999,8 @@ function updateNetworkPins() {
 
 function renderNetworkList() {
   const listEl = document.getElementById('network-list');
-  const selectedNames = getSelectedNetworkNames();
   const localNets = allNetworks.filter(n =>
-    (n.scale === 'local' || n.scale === 'statewide') && selectedNames.has(n.name)
+    n.scale === 'local' || n.scale === 'statewide'
   );
 
   listEl.innerHTML = localNets.map(n => {
@@ -1056,8 +1043,7 @@ function updateAll() {
 
   const uniqueCounties = Object.keys(fullDensity).length;
   const uniqueStates = new Set(Object.keys(fullDensity).map(f=>Math.floor(parseInt(f)/1000))).size;
-  const selectedNetworkNames = getSelectedNetworkNames();
-  const filteredNetworkCount = allNetworks.filter(n => selectedNetworkNames.has(n.name)).length;
+  const filteredNetworkCount = allNetworks.length;
   const tribalNationCount = new Set(
     filtered.flatMap(o => o.tribalNations || [])
   ).size;
@@ -1133,8 +1119,7 @@ function clearOrgDetail() {
 
 function renderNationalList() {
   const nats = allOrgs.filter(o => o.scope === 'national');
-  const selectedNames = getSelectedNetworkNames();
-  const nationwideNets = showNetworks ? allNetworks.filter(n => n.scale === 'nationwide' && selectedNames.has(n.name)) : [];
+  const nationwideNets = showNetworks ? allNetworks.filter(n => n.scale === 'nationwide') : [];
 
   const orgsHtml = nats.map(o => `
     <div class="national-org-item">
