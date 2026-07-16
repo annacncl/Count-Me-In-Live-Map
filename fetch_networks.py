@@ -180,7 +180,7 @@ def convert_record(record):
 
     name = fields.get('Network Name', '').strip()
     if not name:
-        return None
+        return None, f"record {record.get('id')}: missing 'Network Name'"
 
     scale_raw = fields.get('Network Scale', '').strip()
     if scale_raw == 'Local':
@@ -190,7 +190,7 @@ def convert_record(record):
     elif scale_raw in ('Nationwide', 'National'):
         scale = 'nationwide'
     else:
-        return None
+        return None, f"'{name}': Network Scale is {scale_raw!r} (expected Local/Statewide/Nationwide)"
 
     network = {
         'id': int(fields['Id']) if fields.get('Id') else None,
@@ -218,7 +218,7 @@ def convert_record(record):
         if pins:
             network['pins'] = pins
 
-    return network
+    return network, None
 
 def main(output_path='networks.json'):
     if not AIRTABLE_API_KEY:
@@ -230,10 +230,13 @@ def main(output_path='networks.json'):
     print(f'Fetched {len(records)} total records')
 
     networks = []
+    skipped = []
     for record in records:
-        net = convert_record(record)
+        net, reason = convert_record(record)
         if net:
             networks.append(net)
+        elif reason:
+            skipped.append(reason)
 
     with open(output_path, 'w') as f:
         json.dump(networks, f, indent=2)
@@ -242,6 +245,11 @@ def main(output_path='networks.json'):
     print(f'  Nationwide: {sum(1 for n in networks if n["scale"] == "nationwide")}')
     print(f'  Statewide:  {sum(1 for n in networks if n["scale"] == "statewide")}')
     print(f'  Local:      {sum(1 for n in networks if n["scale"] == "local")}')
+
+    if skipped:
+        print(f'\n⚠ Skipped {len(skipped)} record(s) (not written to {output_path}):')
+        for s in skipped:
+            print(f'  - {s}')
 
 if __name__ == '__main__':
     output = 'networks.json'
