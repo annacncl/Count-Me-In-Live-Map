@@ -62,18 +62,6 @@
   },
   {
     "id": 4,
-    "name": "Endowment for Health and NH Possible",
-    "website": "www.endowmentforhealth.org;  www.nhpossible.org",
-    "scope": "local",
-    "city": "",
-    "hqState": "",
-    "mission": "",
-    "fips": [],
-    "states": [],
-    "networks": []
-  },
-  {
-    "id": 5,
     "name": "Chuckanut Health Foundation",
     "website": "https://www.chuckanuthealthfoundation.org/",
     "scope": "local",
@@ -85,7 +73,7 @@
     "networks": []
   },
   {
-    "id": 6,
+    "id": 5,
     "name": "Washington Economic Justice Alliance",
     "website": "www.waeconomicjusticealliance.com",
     "scope": "statewide",
@@ -101,7 +89,7 @@
     ]
   },
   {
-    "id": 7,
+    "id": 6,
     "name": "Collaborative Capacity Co",
     "website": "https://www.collabcapacity.com/",
     "scope": "national",
@@ -125,7 +113,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 7,
     "name": "Fox Valley Data Exchange",
     "website": "www.fvdex.org",
     "scope": "local",
@@ -162,7 +150,7 @@
     ]
   },
   {
-    "id": 9,
+    "id": 8,
     "name": "Community Services for Children",
     "website": "CSC, Inc",
     "scope": "local",
@@ -182,7 +170,7 @@
     ]
   },
   {
-    "id": 10,
+    "id": 9,
     "name": "OSF HealthCare",
     "website": "",
     "scope": "statewide",
@@ -197,7 +185,7 @@
     "networks": []
   },
   {
-    "id": 11,
+    "id": 10,
     "name": "Midtown Assistance Center",
     "website": "http://www.midtownassistancecenter.org",
     "scope": "local",
@@ -211,7 +199,7 @@
     "networks": []
   },
   {
-    "id": 12,
+    "id": 11,
     "name": "Elevate Health",
     "website": "www.elevatehealth.org",
     "scope": "local",
@@ -238,7 +226,7 @@
     ]
   },
   {
-    "id": 13,
+    "id": 12,
     "name": "Memorial Health",
     "website": "Memorial.health",
     "scope": "local",
@@ -258,7 +246,7 @@
     "networks": []
   },
   {
-    "id": 14,
+    "id": 13,
     "name": "Institute for People, Place, and Possibility (IP3)",
     "website": "https://www.i-p3.org/",
     "scope": "national",
@@ -282,7 +270,7 @@
     ]
   },
   {
-    "id": 15,
+    "id": 14,
     "name": "Yakima Neighborhood Health Services",
     "website": "www.ynhs.org",
     "scope": "local",
@@ -298,7 +286,7 @@
     ]
   },
   {
-    "id": 17,
+    "id": 16,
     "name": "Georgia Health Policy Center",
     "website": "ghpc.gsu.edu",
     "scope": "national",
@@ -315,7 +303,7 @@
     ]
   },
   {
-    "id": 18,
+    "id": 17,
     "name": "HealthierHere",
     "website": "https://www.healthierhere.org/",
     "scope": "local",
@@ -341,7 +329,7 @@
     ]
   },
   {
-    "id": 19,
+    "id": 18,
     "name": "Civic Commons",
     "website": "www.civic-commons.org",
     "scope": "national",
@@ -358,7 +346,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 19,
     "name": "Grady Health System",
     "website": "Greadyhealth.org",
     "scope": "local",
@@ -374,7 +362,7 @@
     ]
   },
   {
-    "id": 21,
+    "id": 20,
     "name": "Palm Health Foundation",
     "website": "www.palmhealthfoundation.org",
     "scope": "local",
@@ -392,7 +380,7 @@
     ]
   },
   {
-    "id": 22,
+    "id": 21,
     "name": "Stand Up Mobile",
     "website": "www.standupmobile.org",
     "scope": "local",
@@ -404,13 +392,16 @@
     ],
     "states": [],
     "networks": [
+      "Alabama Arise",
+      "Southern Poverty Law Center",
+      "Alabama Alliance",
       "Alabama Alliance",
       "SPLC",
       "Alabama Arise"
     ]
   },
   {
-    "id": 24,
+    "id": 23,
     "name": "Buhl Regional Health Foundation",
     "website": "buhlregionalhealthfoundation.org",
     "scope": "local",
@@ -422,6 +413,12 @@
     ],
     "states": [],
     "networks": [
+      "Grantmakers of Western PA",
+      "Exponent Philanthropy",
+      "Council on Foundations",
+      "Grantmakers for Effective Organizations",
+      "PA Health Funders Collaborative",
+      "Pennsylvania Association of Community Health Centers",
       "Grantmakers in Health",
       "PA Health Funders Collaborative",
       "Grantmakers in Health",
@@ -432,7 +429,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": 24,
     "name": "Metroparks Toledo",
     "website": "Metroparks Toledo.com",
     "scope": "local",
@@ -454,7 +451,7 @@
     ]
   },
   {
-    "id": 26,
+    "id": 25,
     "name": "Leading Public Health",
     "website": "LeadingPublicHealth.com",
     "scope": "national",
@@ -476,7 +473,7 @@
     ]
   },
   {
-    "id": 27,
+    "id": 26,
     "name": "Mercy Care",
     "website": "Www.mercyatlanta.org",
     "scope": "local",
@@ -501,7 +498,7 @@
     ]
   },
   {
-    "id": 28,
+    "id": 27,
     "name": "Endowment for Health",
     "website": "www.endowmentforhealth.org",
     "scope": "statewide",
@@ -513,11 +510,12 @@
       "NH"
     ],
     "networks": [
-      "www.nhpossible.org"
+      "NH Possible",
+      "NH Possible"
     ]
   },
   {
-    "id": 29,
+    "id": 28,
     "name": "Thriving Together NCW",
     "website": "thrivingtogether.org",
     "scope": "local",

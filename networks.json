@@ -685,6 +685,18 @@
     "lat": 34.29
   },
   {
+    "id": 113,
+    "name": "NH Possible",
+    "website": "www.nhpossible.org",
+    "scale": "statewide",
+    "fips": [],
+    "states": [
+      "NH"
+    ],
+    "lng": -71.57,
+    "lat": 43.19
+  },
+  {
     "id": 36,
     "name": "Collective Impact Forum",
     "website": "https://collectiveimpactforum.org/",
@@ -1088,6 +1100,18 @@
     "states": [],
     "lng": null,
     "lat": null
+  },
+  {
+    "id": 114,
+    "name": "New Hampshire Funders Forum",
+    "website": "https://www.nhnonprofits.org/resources/nh-funders-forum-directory",
+    "scale": "statewide",
+    "fips": [],
+    "states": [
+      "NH"
+    ],
+    "lng": -71.57,
+    "lat": 43.19
   },
   {
     "id": 46,
