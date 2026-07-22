@@ -951,9 +951,21 @@ function setHighlight(fipsList) {
   highlightedFips = fipsList.map(String);
 }
 
+function getSelectedNetworkNames() {
+  const names = new Set();
+  for (const org of allOrgs) {
+    if (org.networks) {
+      for (const n of org.networks) names.add(n.trim());
+    }
+  }
+
+  return names;
+}
+
 function updateNetworkPins() {
+  const selectedNames = getSelectedNetworkNames();
   const visibleNetworks = allNetworks.filter(n =>
-    n.scale !== 'nationwide' &&
+    n.scale !== 'nationwide' && selectedNames.has(n.name) &&
     (n.lat && n.lng || (n.pins && n.pins.length))
   );
 
@@ -1006,8 +1018,9 @@ function updateNetworkPins() {
 
 function renderNetworkList() {
   const listEl = document.getElementById('network-list');
+  const selectedNames = getSelectedNetworkNames();
   const localNets = allNetworks.filter(n =>
-    n.scale === 'local' || n.scale === 'statewide'
+    (n.scale === 'local' || n.scale === 'statewide') && selectedNames.has(n.name)
   );
 
   listEl.innerHTML = localNets.map(n => {
@@ -1050,7 +1063,8 @@ function updateAll() {
 
   const uniqueCounties = Object.keys(fullDensity).length;
   const uniqueStates = new Set(Object.keys(fullDensity).map(f=>Math.floor(parseInt(f)/1000))).size;
-  const filteredNetworkCount = allNetworks.length;
+  const selectedNetworkNames = getSelectedNetworkNames();
+  const filteredNetworkCount = allNetworks.filter(n => selectedNetworkNames.has(n.name)).length;
   const tribalNationCount = new Set(
     filtered.flatMap(o => o.tribalNations || [])
   ).size;
@@ -1126,7 +1140,8 @@ function clearOrgDetail() {
 
 function renderNationalList() {
   const nats = allOrgs.filter(o => o.scope === 'national');
-  const nationwideNets = showNetworks ? allNetworks.filter(n => n.scale === 'nationwide') : [];
+  const selectedNames = getSelectedNetworkNames();
+  const nationwideNets = showNetworks ? allNetworks.filter(n => n.scale === 'nationwide' && selectedNames.has(n.name)) : [];
 
   const orgsHtml = nats.map(o => `
     <div class="national-org-item">
