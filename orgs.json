@@ -171,6 +171,22 @@
   },
   {
     "id": 9,
+    "name": "Endowment for Health",
+    "website": "https://www.endowmentforhealth.org/",
+    "scope": "statewide",
+    "city": "",
+    "hqState": "",
+    "mission": "",
+    "fips": [],
+    "states": [
+      "NH"
+    ],
+    "networks": [
+      "NH Possible"
+    ]
+  },
+  {
+    "id": 10,
     "name": "OSF HealthCare",
     "website": "",
     "scope": "statewide",
@@ -185,7 +201,7 @@
     "networks": []
   },
   {
-    "id": 10,
+    "id": 11,
     "name": "Midtown Assistance Center",
     "website": "http://www.midtownassistancecenter.org",
     "scope": "local",
@@ -199,7 +215,7 @@
     "networks": []
   },
   {
-    "id": 11,
+    "id": 12,
     "name": "Elevate Health",
     "website": "www.elevatehealth.org",
     "scope": "local",
@@ -226,7 +242,7 @@
     ]
   },
   {
-    "id": 12,
+    "id": 13,
     "name": "Memorial Health",
     "website": "Memorial.health",
     "scope": "local",
@@ -246,7 +262,7 @@
     "networks": []
   },
   {
-    "id": 13,
+    "id": 14,
     "name": "Institute for People, Place, and Possibility (IP3)",
     "website": "https://www.i-p3.org/",
     "scope": "national",
@@ -270,7 +286,32 @@
     ]
   },
   {
-    "id": 14,
+    "id": 15,
+    "name": "Center for Fair Housing",
+    "website": "www.sacfh.org",
+    "scope": "local",
+    "city": "",
+    "hqState": "",
+    "mission": "",
+    "fips": [
+      1003,
+      1023,
+      1025,
+      1035,
+      1097,
+      1099,
+      1129
+    ],
+    "states": [],
+    "networks": [
+      "National Fair Housing Alliance",
+      "Taproot Earth",
+      "NAACP",
+      "MEJAC"
+    ]
+  },
+  {
+    "id": 16,
     "name": "Yakima Neighborhood Health Services",
     "website": "www.ynhs.org",
     "scope": "local",
@@ -286,7 +327,7 @@
     ]
   },
   {
-    "id": 16,
+    "id": 18,
     "name": "Georgia Health Policy Center",
     "website": "ghpc.gsu.edu",
     "scope": "national",
@@ -303,7 +344,7 @@
     ]
   },
   {
-    "id": 17,
+    "id": 19,
     "name": "HealthierHere",
     "website": "https://www.healthierhere.org/",
     "scope": "local",
@@ -329,7 +370,7 @@
     ]
   },
   {
-    "id": 18,
+    "id": 20,
     "name": "Civic Commons",
     "website": "www.civic-commons.org",
     "scope": "national",
@@ -346,7 +387,7 @@
     ]
   },
   {
-    "id": 19,
+    "id": 21,
     "name": "Grady Health System",
     "website": "Greadyhealth.org",
     "scope": "local",
@@ -362,7 +403,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 22,
     "name": "Palm Health Foundation",
     "website": "www.palmhealthfoundation.org",
     "scope": "local",
@@ -380,7 +421,7 @@
     ]
   },
   {
-    "id": 21,
+    "id": 23,
     "name": "Stand Up Mobile",
     "website": "www.standupmobile.org",
     "scope": "local",
@@ -401,7 +442,7 @@
     ]
   },
   {
-    "id": 23,
+    "id": 25,
     "name": "Buhl Regional Health Foundation",
     "website": "buhlregionalhealthfoundation.org",
     "scope": "local",
@@ -429,7 +470,7 @@
     ]
   },
   {
-    "id": 24,
+    "id": 26,
     "name": "Metroparks Toledo",
     "website": "Metroparks Toledo.com",
     "scope": "local",
@@ -451,7 +492,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": 27,
     "name": "Leading Public Health",
     "website": "LeadingPublicHealth.com",
     "scope": "national",
@@ -473,7 +514,7 @@
     ]
   },
   {
-    "id": 26,
+    "id": 28,
     "name": "Mercy Care",
     "website": "Www.mercyatlanta.org",
     "scope": "local",
@@ -498,7 +539,7 @@
     ]
   },
   {
-    "id": 27,
+    "id": 29,
     "name": "Endowment for Health",
     "website": "www.endowmentforhealth.org",
     "scope": "statewide",
@@ -515,7 +556,7 @@
     ]
   },
   {
-    "id": 28,
+    "id": 30,
     "name": "Thriving Together NCW",
     "website": "thrivingtogether.org",
     "scope": "local",
