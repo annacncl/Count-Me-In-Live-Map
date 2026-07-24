@@ -83,6 +83,20 @@
     "lat": 47.4
   },
   {
+    "id": 120,
+    "name": "Pierce County Project Access",
+    "website": "https://www.pcprojectaccess.org/",
+    "scale": "local",
+    "fips": [
+      53053
+    ],
+    "states": [
+      "WA"
+    ],
+    "lng": -121.187,
+    "lat": 47.1318
+  },
+  {
     "id": 37,
     "name": "Common Future",
     "website": "https://www.commonfuture.co/",
@@ -129,6 +143,16 @@
     ],
     "lng": -122.2282,
     "lat": 48.1975
+  },
+  {
+    "id": 115,
+    "name": "National Fair Housing Alliance",
+    "website": "https://nationalfairhousing.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
   },
   {
     "id": 39,
@@ -266,6 +290,18 @@
     "name": "Washington Alliance for Economic Justice",
     "website": "https://waeconomicjusticealliance.com/",
     "scale": "local",
+    "fips": [],
+    "states": [
+      "WA"
+    ],
+    "lng": -120.74,
+    "lat": 47.4
+  },
+  {
+    "id": 119,
+    "name": "Coalition of Accountable Communities of Health",
+    "website": "https://www.coalitionofachs.org/",
+    "scale": "statewide",
     "fips": [],
     "states": [
       "WA"
@@ -528,6 +564,20 @@
     "lat": null
   },
   {
+    "id": 118,
+    "name": "Mobile Environmental Justice Coalition",
+    "website": "https://www.mejacoalition.org/",
+    "scale": "local",
+    "fips": [
+      1097
+    ],
+    "states": [
+      "AL"
+    ],
+    "lng": -87.193,
+    "lat": 32.5582
+  },
+  {
     "id": 13,
     "name": "Jefferson Collaborative for Health Equity",
     "website": "https://www.jeffersonhealth.org/about-us/community/collaborative-health-equity",
@@ -555,6 +605,16 @@
     "id": 35,
     "name": "CF Leads",
     "website": "https://cfleads.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 117,
+    "name": "NAACP",
+    "website": "https://naacp.org/",
     "scale": "nationwide",
     "fips": [],
     "states": [],
@@ -658,6 +718,20 @@
     "states": [],
     "lng": null,
     "lat": null
+  },
+  {
+    "id": 122,
+    "name": "Resilient Pierce County",
+    "website": "https://www.uwpc.org/resilient-pierce-county",
+    "scale": "local",
+    "fips": [
+      53053
+    ],
+    "states": [
+      "WA"
+    ],
+    "lng": -121.187,
+    "lat": 47.1318
   },
   {
     "id": 111,
@@ -1085,6 +1159,28 @@
     "id": 84,
     "name": "America's Essential Hospitals",
     "website": "https://essentialhospitals.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 121,
+    "name": "Tacoma Anchor Network",
+    "website": "https://tacoma.gov/government/departments/office-of-strategy/tacoma-anchor-network/",
+    "scale": "local",
+    "fips": [],
+    "states": [
+      "WA"
+    ],
+    "lng": -120.74,
+    "lat": 47.4
+  },
+  {
+    "id": 116,
+    "name": "Taproot Earth",
+    "website": "https://www.taproot.earth/en",
     "scale": "nationwide",
     "fips": [],
     "states": [],
