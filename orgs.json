@@ -380,6 +380,30 @@
   },
   {
     "id": 20,
+    "name": "ChangeLine",
+    "website": "www.changeline.org",
+    "scope": "local",
+    "city": "",
+    "hqState": "",
+    "mission": "",
+    "fips": [
+      8041,
+      8119
+    ],
+    "states": [],
+    "networks": [
+      "Belonging Colorado",
+      "Better Together America",
+      "Civic Collaboratory",
+      "Collective Impact Forum",
+      "Council on Foundations",
+      "Foundation for Social Connection",
+      "Trust for Civic Life",
+      "Weave Social Fabric"
+    ]
+  },
+  {
+    "id": 21,
     "name": "Civic Commons",
     "website": "www.civic-commons.org",
     "scope": "national",
@@ -396,7 +420,7 @@
     ]
   },
   {
-    "id": 21,
+    "id": 22,
     "name": "Grady Health System",
     "website": "Greadyhealth.org",
     "scope": "local",
@@ -415,7 +439,7 @@
     ]
   },
   {
-    "id": 22,
+    "id": 23,
     "name": "Palm Health Foundation",
     "website": "www.palmhealthfoundation.org",
     "scope": "local",
@@ -433,7 +457,7 @@
     ]
   },
   {
-    "id": 23,
+    "id": 24,
     "name": "The Force for Health Network",
     "website": "www.theforceforhealth.com",
     "scope": "national",
@@ -447,7 +471,7 @@
     ]
   },
   {
-    "id": 24,
+    "id": 25,
     "name": "Stand Up Mobile",
     "website": "www.standupmobile.org",
     "scope": "local",
@@ -468,7 +492,7 @@
     ]
   },
   {
-    "id": 26,
+    "id": 27,
     "name": "Buhl Regional Health Foundation",
     "website": "buhlregionalhealthfoundation.org",
     "scope": "local",
@@ -496,7 +520,7 @@
     ]
   },
   {
-    "id": 27,
+    "id": 28,
     "name": "Metroparks Toledo",
     "website": "Metroparks Toledo.com",
     "scope": "local",
@@ -520,7 +544,7 @@
     ]
   },
   {
-    "id": 28,
+    "id": 29,
     "name": "Leading Public Health",
     "website": "LeadingPublicHealth.com",
     "scope": "national",
@@ -542,7 +566,7 @@
     ]
   },
   {
-    "id": 29,
+    "id": 30,
     "name": "Mercy Care",
     "website": "Www.mercyatlanta.org",
     "scope": "local",
@@ -567,7 +591,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 31,
     "name": "Endowment for Health",
     "website": "www.endowmentforhealth.org",
     "scope": "statewide",
@@ -584,7 +608,7 @@
     ]
   },
   {
-    "id": 31,
+    "id": 32,
     "name": "Thriving Together NCW",
     "website": "thrivingtogether.org",
     "scope": "local",
