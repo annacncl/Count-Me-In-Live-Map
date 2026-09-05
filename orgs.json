@@ -83,7 +83,8 @@
     "hqState": "",
     "mission": "",
     "fips": [
-      48323
+      48323,
+      48465
     ],
     "states": [],
     "networks": [],
@@ -154,7 +155,7 @@
     ],
     "states": [],
     "networks": [
-      "Tri-County Community Health Coalition",
+      "Tri-County Community Health Improvement Coalition",
       "Inland Empire Vital Conditions Network",
       "Healthy Communities Delaware",
       "Contra Costa Together",
