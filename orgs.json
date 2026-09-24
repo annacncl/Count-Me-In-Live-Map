@@ -207,6 +207,23 @@
   },
   {
     "id": 11,
+    "name": "Stories Change Power",
+    "website": "https://www.storieschangepower.org",
+    "scope": "national",
+    "city": "",
+    "hqState": "",
+    "mission": "",
+    "fips": [],
+    "states": [],
+    "networks": [
+      "Listen First Coalition",
+      "Braver Angels",
+      "Democracy Communications Collaborative",
+      "Democracy Communications Collaborative"
+    ]
+  },
+  {
+    "id": 12,
     "name": "OSF HealthCare",
     "website": "",
     "scope": "statewide",
@@ -221,7 +238,23 @@
     "networks": []
   },
   {
-    "id": 12,
+    "id": 13,
+    "name": "Primary Health Network",
+    "website": "https://www.primary-health.net/",
+    "scope": "local",
+    "city": "",
+    "hqState": "",
+    "mission": "",
+    "fips": [
+      42085,
+      42073,
+      42049
+    ],
+    "states": [],
+    "networks": []
+  },
+  {
+    "id": 14,
     "name": "Midtown Assistance Center",
     "website": "http://www.midtownassistancecenter.org",
     "scope": "local",
@@ -235,7 +268,7 @@
     "networks": []
   },
   {
-    "id": 13,
+    "id": 15,
     "name": "Elevate Health",
     "website": "www.elevatehealth.org",
     "scope": "local",
@@ -265,7 +298,7 @@
     ]
   },
   {
-    "id": 14,
+    "id": 16,
     "name": "Memorial Health",
     "website": "Memorial.health",
     "scope": "local",
@@ -285,7 +318,7 @@
     "networks": []
   },
   {
-    "id": 15,
+    "id": 17,
     "name": "Institute for People, Place, and Possibility (IP3)",
     "website": "https://www.i-p3.org/",
     "scope": "national",
@@ -309,7 +342,7 @@
     ]
   },
   {
-    "id": 16,
+    "id": 18,
     "name": "Center for Fair Housing",
     "website": "www.sacfh.org",
     "scope": "local",
@@ -338,7 +371,21 @@
     ]
   },
   {
-    "id": 17,
+    "id": 19,
+    "name": "Beach Cities Health District",
+    "website": "www.bchd.org",
+    "scope": "local",
+    "city": "",
+    "hqState": "",
+    "mission": "",
+    "fips": [
+      6037
+    ],
+    "states": [],
+    "networks": []
+  },
+  {
+    "id": 20,
     "name": "Yakima Neighborhood Health Services",
     "website": "www.ynhs.org",
     "scope": "local",
@@ -354,7 +401,27 @@
     ]
   },
   {
-    "id": 19,
+    "id": 21,
+    "name": "Loma Linda University Health",
+    "website": "https://lluh.org/about-us/community-benefit/community-benefit-reports-and-resources",
+    "scope": "local",
+    "city": "",
+    "hqState": "",
+    "mission": "",
+    "fips": [
+      6071,
+      6065
+    ],
+    "states": [],
+    "networks": [
+      "Inland Empire Vital Conditions Network",
+      "Better Ancestors",
+      "Community Initiatives Network",
+      "Hold.Health"
+    ]
+  },
+  {
+    "id": 23,
     "name": "Georgia Health Policy Center",
     "website": "ghpc.gsu.edu",
     "scope": "national",
@@ -371,7 +438,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 24,
     "name": "HealthierHere",
     "website": "https://www.healthierhere.org/",
     "scope": "local",
@@ -397,7 +464,24 @@
     ]
   },
   {
-    "id": 21,
+    "id": 25,
+    "name": "BeWellPBC",
+    "website": "https://www.bewellpbc.org/",
+    "scope": "local",
+    "city": "",
+    "hqState": "",
+    "mission": "",
+    "fips": [
+      12099
+    ],
+    "states": [],
+    "networks": [
+      "BeWell Palm Beach County",
+      "Rippel Foundation, ReThink Health"
+    ]
+  },
+  {
+    "id": 26,
     "name": "ChangeLine",
     "website": "www.changeline.org",
     "scope": "local",
@@ -421,7 +505,7 @@
     ]
   },
   {
-    "id": 22,
+    "id": 27,
     "name": "Civic Commons",
     "website": "www.civic-commons.org",
     "scope": "national",
@@ -438,7 +522,7 @@
     ]
   },
   {
-    "id": 23,
+    "id": 28,
     "name": "Grady Health System",
     "website": "Greadyhealth.org",
     "scope": "local",
@@ -457,7 +541,7 @@
     ]
   },
   {
-    "id": 24,
+    "id": 29,
     "name": "Palm Health Foundation",
     "website": "www.palmhealthfoundation.org",
     "scope": "local",
@@ -475,7 +559,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": 30,
     "name": "The Force for Health Network",
     "website": "www.theforceforhealth.com",
     "scope": "national",
@@ -489,7 +573,7 @@
     ]
   },
   {
-    "id": 26,
+    "id": 31,
     "name": "Stand Up Mobile",
     "website": "www.standupmobile.org",
     "scope": "local",
@@ -510,7 +594,7 @@
     ]
   },
   {
-    "id": 28,
+    "id": 33,
     "name": "Buhl Regional Health Foundation",
     "website": "buhlregionalhealthfoundation.org",
     "scope": "local",
@@ -538,7 +622,7 @@
     ]
   },
   {
-    "id": 29,
+    "id": 34,
     "name": "Metroparks Toledo",
     "website": "Metroparks Toledo.com",
     "scope": "local",
@@ -562,7 +646,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 35,
     "name": "Leading Public Health",
     "website": "LeadingPublicHealth.com",
     "scope": "national",
@@ -584,7 +668,7 @@
     ]
   },
   {
-    "id": 31,
+    "id": 36,
     "name": "Mercy Care",
     "website": "Www.mercyatlanta.org",
     "scope": "local",
@@ -609,7 +693,7 @@
     ]
   },
   {
-    "id": 32,
+    "id": 37,
     "name": "Endowment for Health",
     "website": "www.endowmentforhealth.org",
     "scope": "statewide",
@@ -626,7 +710,7 @@
     ]
   },
   {
-    "id": 33,
+    "id": 38,
     "name": "Thriving Together NCW",
     "website": "thrivingtogether.org",
     "scope": "local",

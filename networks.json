@@ -855,6 +855,16 @@
     "lat": null
   },
   {
+    "id": 123,
+    "name": "Democracy Communications Collaborative",
+    "website": "",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
     "id": 61,
     "name": "Philanthropy for Active Civic Engagement",
     "website": "https://www.pacefunders.org/",
