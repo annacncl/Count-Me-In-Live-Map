@@ -246,6 +246,16 @@
     "lat": 44.375
   },
   {
+    "id": 124,
+    "name": "Seacoast Impact Collaborative",
+    "website": "https://goodworkseacoast.org/seacoast-impact-collaborative/",
+    "scale": "local",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
     "id": 112,
     "name": "Lehigh Valley Health Network",
     "website": "https://www.lvhn.org/",
@@ -378,6 +388,16 @@
     ],
     "lng": -105.55,
     "lat": 39.0
+  },
+  {
+    "id": 127,
+    "name": "Making Missing Markets Initiative",
+    "website": "https://www.newyorkfed.org/outreach-and-education/making-missing-markets",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
   },
   {
     "id": 85,
@@ -710,6 +730,16 @@
     "lat": null
   },
   {
+    "id": 126,
+    "name": "Council on Black Health",
+    "website": "https://councilbh.org",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
     "id": 97,
     "name": "American Public Health Association",
     "website": "https://www.apha.org/",
@@ -945,6 +975,16 @@
     "id": 75,
     "name": "Wellbeing Economy Alliance",
     "website": "https://wellbeingeconomy.org/",
+    "scale": "nationwide",
+    "fips": [],
+    "states": [],
+    "lng": null,
+    "lat": null
+  },
+  {
+    "id": 125,
+    "name": "Invest Health",
+    "website": "https://www.investhealth.org/",
     "scale": "nationwide",
     "fips": [],
     "states": [],
