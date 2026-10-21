@@ -680,6 +680,35 @@
   },
   {
     "id": 36,
+    "name": "ThedaCare",
+    "website": "Thedacare.org",
+    "scope": "local",
+    "city": "",
+    "hqState": "",
+    "mission": "",
+    "fips": [
+      55015,
+      55047,
+      55071,
+      55039,
+      55077,
+      55078,
+      55087,
+      55115,
+      55135,
+      55139,
+      55137
+    ],
+    "states": [],
+    "networks": [
+      "Tri-County Community Health Improvement Coalition"
+    ],
+    "tribalNations": [
+      "Menominee Indian Tribe of Wisconsin"
+    ]
+  },
+  {
+    "id": 37,
     "name": "Metroparks Toledo",
     "website": "Metroparks Toledo.com",
     "scope": "local",
@@ -703,7 +732,7 @@
     ]
   },
   {
-    "id": 37,
+    "id": 38,
     "name": "Leading Public Health",
     "website": "LeadingPublicHealth.com",
     "scope": "national",
@@ -725,7 +754,7 @@
     ]
   },
   {
-    "id": 39,
+    "id": 40,
     "name": "Mercy Care",
     "website": "Www.mercyatlanta.org",
     "scope": "local",
@@ -750,7 +779,7 @@
     ]
   },
   {
-    "id": 40,
+    "id": 41,
     "name": "Endowment for Health",
     "website": "www.endowmentforhealth.org",
     "scope": "statewide",
@@ -767,7 +796,7 @@
     ]
   },
   {
-    "id": 41,
+    "id": 42,
     "name": "Thriving Together NCW",
     "website": "thrivingtogether.org",
     "scope": "local",
