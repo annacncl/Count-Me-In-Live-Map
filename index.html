@@ -40,6 +40,14 @@
   .header-stats { display:flex; gap:28px; font-size:13px; }
   .stat-value { font-weight:600; color:var(--rippel-teal); font-variant-numeric:tabular-nums; }
   .stat-label { color:var(--text-dim); margin-left:6px; }
+  /* "Add your organization to the map" -> Count Me In form (rippel.org/count-me-in/ redirects to the Airtable form). */
+  .header-cta { margin-left:auto; margin-right:28px; padding:7px 14px; border-radius:20px; background:var(--rippel-teal); color:var(--bg); font-size:13px; font-weight:600; text-decoration:none; white-space:nowrap; flex-shrink:0; }
+  .header-cta:hover { background:var(--accent-light); }
+  .header-cta-short { display:none; }
+  /* Fits in the header row from 1280px (full label) / 1200px (short label); below that the
+     row is full, so it floats just under the header, centered over the map (phones too). */
+  @media (max-width: 1279px) { .header-cta-full { display:none; } .header-cta-short { display:inline; } .header-cta { margin-right:20px; } }
+  @media (max-width: 1199px) { .header-cta { position:fixed; top:88px; left:50%; transform:translateX(-50%); margin:0; box-shadow:0 4px 14px rgba(0,0,0,0.35); } }
 
   #map { position:absolute; inset:0; top:80px; }
 
@@ -265,6 +273,9 @@
     .logo-mark { width: 24px; height: 24px; }
     .header-stats { gap: 14px; font-size: 11px; }
     .stat-label { margin-left: 3px; }
+    .header-cta { top: 118px; padding: 6px 12px; font-size: 12px; }
+    /* Side panels overlay the map on phones; get out of their way while one is open. */
+    body:has(.sidebar:not(.collapsed)) .header-cta, body:has(.national-panel:not(.collapsed)) .header-cta { display: none; }
 
     #map { top: 110px; }
 
@@ -315,6 +326,7 @@
     <div class="logo-mark"></div>
     <h1>Thriving Together:<br><span>Who's Committed to Help Make Great Strides?</span></h1>
   </div>
+  <a class="header-cta" href="https://rippel.org/count-me-in/" target="_blank" rel="noopener"><span class="header-cta-full">Add your organization to the map</span><span class="header-cta-short">Add your organization</span></a>
   <div class="header-stats">
     <div><span class="stat-value" id="stat-orgs">—</span><span class="stat-label">organizations</span></div>
     <div><span class="stat-value" id="stat-networks">—</span><span class="stat-label">networks</span></div>
